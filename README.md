@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Banking Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React TypeScript frontend with Express.js backend for managing banking discounts (escomptes) and refinancing operations with comprehensive logging.
 
-## Available Scripts
+## Quick start (exact commands)
 
-In the project directory, you can run:
+**Prerequisites:** Node.js >=18, npm >=8
 
-### `npm start`
+```bash
+# Setup
+git clone <repository-url>
+cd Gestion-des-escomptes-VF-main
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Run (requires 2 terminals)
+# Terminal 1: Backend
+node server.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Terminal 2: Frontend
+npm start
 
-### `npm test`
+# Other commands
+npm run build        # Production build
+npm test            # Unit tests
+npm run test:e2e    # E2E tests with Playwright
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Example .env:**
+```env
+PORT=3000
+REACT_APP_API_URL=http://localhost:3001
+LOG_LEVEL=info
+NODE_ENV=development
+```
 
-### `npm run build`
+## File map (top-level + important nested files)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `server.js` — Express API server. Handles CRUD operations for escomptes/refinancements with in-memory storage.
+  - CORS enabled, Winston logging integrated, serves on port 3001.
+  - Data persists only during server runtime - restart clears all data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `src/` — React TypeScript frontend source.
+  - Redux Toolkit for state, Tailwind for styling, React Router for navigation.
+  - Hot reload enabled in development mode.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `src/components/` — React components organized by feature.
+  - `Escomptes/` for discount management, `Layout/` for header/sidebar, `UI/` for reusables.
+  - Each component uses TypeScript interfaces and Tailwind classes.
 
-### `npm run eject`
+- `src/store/` — Redux store configuration and slices.
+  - Centralized state management with RTK Query for API calls.
+  - Slices handle escomptes, refinancements, auth, and configuration state.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `src/services/api/` — API client and endpoint definitions.
+  - Axios-based client with error handling and request/response logging.
+  - Separate files per feature (escomptes, refinancements, dashboard).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `utils/logger.js` — Winston logging configuration.
+  - Daily rotating files in `logs/` directory with different log levels.
+  - Automatic log cleanup and structured JSON formatting.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `tailwind.config.js` — Tailwind CSS configuration.
+  - Custom color palette (primary, success, warning, danger) and form plugin.
+  - Responsive breakpoints and utility class extensions.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `package.json` — Dependencies and scripts.
+  - React 18, Redux Toolkit, Express, Winston, Playwright for testing.
+  - Scripts for dev, build, test, and deployment workflows.
 
-## Learn More
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Build:** `npm run build` creates optimized static files in `build/` directory.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Hosting:** Frontend works on Vercel/Netlify (static). Backend needs Node.js hosting (Heroku, DigitalOcean). Set `REACT_APP_API_URL` to production backend URL.
 
-### Code Splitting
+## Troubleshooting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Blank page/404:** Start backend server first with `node server.js`
+- **Port 3000 in use:** Use `PORT=3002 npm start` or kill existing process
+- **CORS errors:** Ensure backend runs on port 3001 and frontend on 3000
