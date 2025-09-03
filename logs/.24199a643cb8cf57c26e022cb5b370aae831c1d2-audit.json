@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\messa\\OneDrive\\Desktop\\GESTION\\Gestion-des-escomptes-VF-main\\Gestion-des-escomptes-VF-main\\logs\\.24199a643cb8cf57c26e022cb5b370aae831c1d2-audit.json",
+    "files": [
+        {
+            "date": 1756929329821,
+            "name": "C:\\Users\\messa\\OneDrive\\Desktop\\GESTION\\Gestion-des-escomptes-VF-main\\Gestion-des-escomptes-VF-main\\logs\\exceptions-2025-09-03.log",
+            "hash": "0592a393f9afbfc3d97003bb00bca476f8ee18e93b7f2c3b70524b5f19d3bd52"
+        }
+    ],
+    "hashType": "sha256"
+}

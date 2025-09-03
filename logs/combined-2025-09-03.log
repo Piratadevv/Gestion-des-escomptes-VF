@@ -1,0 +1,72 @@
+{
+  message: 'Test info message',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-03 21:01:52'
+}
+{
+  message: 'Test error message',
+  level: 'error',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-03 21:01:52'
+}
+{
+  message: 'Test warning message',
+  level: 'warn',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-03 21:01:52'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Test action message Test action message',
+  timestamp: '2025-09-03 21:01:52',
+  action: 'TEST_ACTION',
+  endpoint: '/test',
+  testData: 'sample',
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Test error context Test error context',
+  error: {
+    message: 'Test error',
+    stack: 'Error: Test error\n' +
+      '    at Object.<anonymous> (C:\\Users\\messa\\OneDrive\\Desktop\\GESTION\\Gestion-des-escomptes-VF-main\\Gestion-des-escomptes-VF-main\\test-logger.js:17:17)\n' +
+      '    at Module._compile (node:internal/modules/cjs/loader:1692:14)\n' +
+      '    at Object..js (node:internal/modules/cjs/loader:1824:10)\n' +
+      '    at Module.load (node:internal/modules/cjs/loader:1427:32)\n' +
+      '    at Module._load (node:internal/modules/cjs/loader:1250:12)\n' +
+      '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+      '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+      '    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:152:5)\n' +
+      '    at node:internal/main/run_main_module:33:47',
+    name: 'Error'
+  },
+  context: { action: 'TEST_ERROR', context: 'testing' },
+  timestamp: '2025-09-03 21:01:52',
+  level: 'error'
+}
+{
+  message: 'GET /api/escomptes - Query: {}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-03 21:07:38'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-03 21:07:38',
+  action: 'GET_ESCOMPTES',
+  filters: {},
+  totalRecords: 3,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-03 21:07:38',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 3,
+  filtersApplied: false,
+  level: 'info'
+}
