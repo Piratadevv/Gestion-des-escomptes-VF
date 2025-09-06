@@ -22,23 +22,24 @@ const KPICard: React.FC<KPICardProps> = ({
   trend,
   onClick
 }) => {
-  // Style bleu ciel uniforme pour toutes les cartes KPI
+  // Style bancaire professionnel pour toutes les cartes KPI
   const neutralClasses = {
-    bg: 'bg-sky-50',
-    icon: 'text-sky-600',
-    border: 'border-sky-200',
-    hover: 'hover:bg-sky-100'
+    bg: 'bg-gradient-to-br from-banking-50 to-trust-50',
+    icon: 'text-banking-600',
+    border: 'border-trust-200',
+    hover: 'hover:shadow-banking-md hover:border-banking-300',
+    shadow: 'shadow-banking-sm'
   };
 
   const getTrendClasses = (type: string) => {
     switch (type) {
       case 'positive':
-        return 'text-success-600';
+        return 'text-financial-600';
       case 'negative':
-        return 'text-danger-600';
+        return 'text-risk-600';
       case 'neutral':
       default:
-        return 'text-gray-600';
+        return 'text-neutral-600';
     }
   };
 
@@ -70,28 +71,29 @@ const KPICard: React.FC<KPICardProps> = ({
 
   const CardContent = () => (
     <div className={`
-      bg-sky-50 rounded-lg border shadow-sm p-6 transition-all duration-200
+      ${neutralClasses.bg} rounded-banking border ${neutralClasses.shadow} p-6 
+      transition-all duration-300 hover:scale-[1.02]
       ${onClick ? `cursor-pointer ${neutralClasses.hover}` : ''}
       ${neutralClasses.border}
     `}>
       <div className="flex items-center justify-between">
         <div className="flex-1">
-          <p className="text-sm font-medium text-gray-600 mb-1">
+          <p className="text-sm font-semibold text-neutral-600 mb-2 uppercase tracking-wide">
             {title}
           </p>
-          <p className="text-2xl font-bold text-gray-900 mb-2">
+          <p className="text-3xl font-bold text-banking-900 mb-3 font-banking">
             {value}
           </p>
           
           {trend && (
-            <div className={`flex items-center text-sm ${getTrendClasses(trend.type)}`}>
+            <div className={`flex items-center text-sm ${getTrendClasses(trend.type)} bg-white/50 rounded-full px-3 py-1`}>
               <span className="mr-1">
                 {getTrendIcon(trend.type)}
               </span>
-              <span className="font-medium">
+              <span className="font-semibold">
                 {trend.value}
               </span>
-              <span className="ml-1 text-gray-600">
+              <span className="ml-1 text-neutral-700">
                 {trend.label}
               </span>
             </div>
@@ -99,10 +101,10 @@ const KPICard: React.FC<KPICardProps> = ({
         </div>
         
         <div className={`
-          flex-shrink-0 p-3 rounded-lg
-          ${neutralClasses.bg}
+          flex-shrink-0 p-4 rounded-banking bg-white/80 shadow-banking-sm
+          border border-banking-200
         `}>
-          <div className={neutralClasses.icon}>
+          <div className={`${neutralClasses.icon} text-2xl`}>
             {icon}
           </div>
         </div>
@@ -114,7 +116,7 @@ const KPICard: React.FC<KPICardProps> = ({
     return (
       <button
         onClick={onClick}
-        className="w-full text-left focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg"
+        className="w-full text-left focus:outline-none focus:ring-2 focus:ring-banking-500 focus:ring-offset-2 rounded-banking"
         aria-label={`Voir les détails de ${title}`}
       >
         <CardContent />

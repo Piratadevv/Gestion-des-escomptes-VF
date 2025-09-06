@@ -120,7 +120,7 @@ const Modal: React.FC<ModalProps> = ({
         onClick={handleOverlayClick}
       >
         {/* Overlay */}
-        <div className="fixed inset-0 transition-opacity bg-black bg-opacity-50" />
+        <div className="fixed inset-0 transition-opacity bg-black bg-opacity-50 backdrop-blur-sm" />
 
         {/* Centrage vertical pour les écrans sm et plus */}
         <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
@@ -131,8 +131,8 @@ const Modal: React.FC<ModalProps> = ({
         <div
           ref={modalRef}
           className={`
-            inline-block w-full text-left align-bottom transition-all transform
-            bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle
+            inline-block w-full text-left align-bottom transition-all transform duration-300 scale-100
+            bg-gradient-to-br from-white to-slate-50 rounded-banking shadow-banking-xl border border-slate-200/50 sm:my-8 sm:align-middle
             ${getSizeClasses()}
           `}
           role="dialog"
@@ -141,26 +141,26 @@ const Modal: React.FC<ModalProps> = ({
           tabIndex={-1}
         >
           {/* En-tête */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-            <h3 id="modal-title" className="text-lg font-medium text-gray-900">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-gradient-to-r from-slate-200 to-slate-300/50 bg-gradient-to-r from-slate-50 to-white">
+            <h3 id="modal-title" className="text-lg font-semibold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
               {title}
             </h3>
             
             {showCloseButton && (
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-md p-1"
+                className="text-slate-400 hover:text-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-full p-2 transition-all duration-200 hover:bg-slate-100 hover:shadow-banking-sm"
                 aria-label="Fermer la modal"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             )}
           </div>
 
           {/* Contenu */}
-          <div className="px-6 py-4">
+          <div className="px-6 py-4 bg-gradient-to-br from-white via-slate-50/30 to-slate-100/20">
             {children}
           </div>
         </div>

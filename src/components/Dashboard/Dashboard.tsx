@@ -107,31 +107,46 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-neutral-50">
       {/* En-tête du dashboard */}
-      <div className="bg-white shadow-sm border-b border-gray-200">
+      <div className="bg-gradient-to-r from-trust-900 to-banking-800 shadow-banking border-b border-trust-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-6">
+          <div className="py-8">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">
-                  Gestion des Escomptes Bancaires
-                </h1>
-                <p className="mt-1 text-sm text-gray-600">
-                  Tableau de bord - {new Date().toLocaleDateString('fr-FR', {
+                <div className="flex items-center space-x-3 mb-2">
+                  <div className="w-10 h-10 bg-banking-600 rounded-banking flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h1 className="text-2xl font-bold text-white">
+                      Gestion des Escomptes Bancaires
+                    </h1>
+                    <p className="text-banking-200 text-sm font-medium">
+                      Système de Gestion Financière
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-2 text-sm text-trust-300 flex items-center space-x-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>{new Date().toLocaleDateString('fr-FR', {
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
-                  })}
+                  })}</span>
                 </p>
               </div>
               
-              <div className="mt-4 sm:mt-0 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+              <div className="mt-6 sm:mt-0 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
                 <button
                   onClick={handleRefresh}
                   disabled={refreshing}
-                  className="btn-secondary flex items-center justify-center"
+                  className="bg-trust-700 hover:bg-trust-600 text-white px-4 py-2.5 rounded-banking font-medium transition-all duration-200 flex items-center justify-center shadow-sm border border-trust-600 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <svg 
                     className={`w-4 h-4 mr-2 ${refreshing ? 'animate-spin' : ''}`} 
@@ -146,7 +161,7 @@ const Dashboard: React.FC = () => {
                 
                 <button
                   onClick={handleConfiguration}
-                  className="btn-secondary flex items-center justify-center"
+                  className="bg-banking-600 hover:bg-banking-700 text-white px-4 py-2.5 rounded-banking font-medium transition-all duration-200 flex items-center justify-center shadow-sm hover:shadow-md"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -174,22 +189,39 @@ const Dashboard: React.FC = () => {
 
       {/* Contenu principal */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header avec bouton de configuration */}
-        <div className="flex justify-between items-center mb-6">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Tableau de Bord</h1>
-            <p className="text-gray-600 mt-1">Vue d'ensemble de vos escomptes et refinancements</p>
+        {/* Header avec statistiques rapides */}
+        <div className="mb-8">
+          <div className="bg-white rounded-banking shadow-banking border border-neutral-200 p-6">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+              <div className="mb-4 lg:mb-0">
+                <h2 className="text-xl font-bold text-trust-900 mb-1">Tableau de Bord Financier</h2>
+                <p className="text-trust-600 text-sm">Vue d'ensemble de vos escomptes et refinancements</p>
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-banking-600">{escomptes.length}</div>
+                  <div className="text-xs text-trust-500 font-medium">Escomptes Actifs</div>
+                </div>
+                <div className="w-px h-8 bg-neutral-300"></div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-financial-600">{Math.round(utilisationPourcentage)}%</div>
+                  <div className="text-xs text-trust-500 font-medium">Taux d'Utilisation</div>
+                </div>
+                <div className="w-px h-8 bg-neutral-300"></div>
+                <button
+                  onClick={() => dispatch(openModal({ type: 'configuration', isOpen: true }))}
+                  className="bg-banking-600 hover:bg-banking-700 text-white px-4 py-2 rounded-banking font-medium transition-all duration-200 flex items-center space-x-2 shadow-sm hover:shadow-md"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span>Configuration</span>
+                </button>
+              </div>
+            </div>
           </div>
-          <button
-            onClick={() => dispatch(openModal({ type: 'configuration', isOpen: true }))}
-            className="btn-primary flex items-center space-x-2"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <span>Configuration</span>
-          </button>
         </div>
 
         {/* KPI Cards */}
@@ -279,71 +311,108 @@ const Dashboard: React.FC = () => {
 
         {/* Alertes */}
         {encoursRestantGlobal < 0 && (
-          <div className="mb-6 bg-danger-50 border border-danger-200 rounded-lg p-4">
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-danger-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-              </svg>
-              <div>
-                <h3 className="text-sm font-medium text-danger-800">
-                  Dépassement d'autorisation détecté
+          <div className="mb-8 bg-gradient-to-r from-risk-50 to-risk-100 border-l-4 border-risk-500 rounded-banking shadow-sm p-6">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <div className="w-10 h-10 bg-risk-500 rounded-banking flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-risk-800 mb-2">
+                  ⚠️ Dépassement d'Autorisation Critique
                 </h3>
-                <p className="text-sm text-danger-700 mt-1">
-                  Le cumul des escomptes dépasse l'autorisation bancaire de {formaterMontant(Math.abs(encoursRestantGlobal))} DH.
-                  Veuillez ajuster les montants ou augmenter l'autorisation.
+                <p className="text-risk-700 mb-3">
+                  Le cumul des escomptes dépasse l'autorisation bancaire de <span className="font-bold">{formaterMontant(Math.abs(encoursRestantGlobal))} DH</span>.
                 </p>
+                <div className="bg-white rounded-banking p-3 border border-risk-200">
+                  <p className="text-sm text-risk-600">
+                    <strong>Action requise:</strong> Veuillez ajuster les montants ou augmenter l'autorisation bancaire immédiatement.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         )}
 
         {utilisationPourcentage > 90 && encoursRestantGlobal >= 0 && (
-          <div className="mb-6 bg-warning-50 border border-warning-200 rounded-lg p-4">
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-warning-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-              </svg>
-              <div>
-                <h3 className="text-sm font-medium text-warning-800">
-                  Autorisation presque atteinte
+          <div className="mb-8 bg-gradient-to-r from-alert-50 to-alert-100 border-l-4 border-alert-500 rounded-banking shadow-sm p-6">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <div className="w-10 h-10 bg-alert-500 rounded-banking flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-alert-800 mb-2">
+                  🔔 Autorisation Presque Atteinte
                 </h3>
-                <p className="text-sm text-warning-700 mt-1">
-                  Vous avez utilisé {Math.round(utilisationPourcentage)}% de votre autorisation bancaire.
-                  Il reste {formaterMontant(encoursRestantGlobal)} DH disponible.
+                <p className="text-alert-700 mb-3">
+                  Vous avez utilisé <span className="font-bold">{Math.round(utilisationPourcentage)}%</span> de votre autorisation bancaire.
                 </p>
+                <div className="bg-white rounded-banking p-3 border border-alert-200">
+                  <p className="text-sm text-alert-600">
+                    <strong>Montant disponible:</strong> {formaterMontant(encoursRestantGlobal)} DH restants
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         )}
 
         {/* Section des escomptes */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-          <div className="px-6 py-4 border-b border-gray-200">
+        <div className="bg-white rounded-banking shadow-banking border border-neutral-200">
+          <div className="px-6 py-5 border-b border-neutral-200 bg-gradient-to-r from-neutral-50 to-white">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="text-lg font-medium text-gray-900">
-                  {activeTab === 'escomptes' ? 'Liste des Escomptes' : 'Refinancements'}
-                </h2>
-                <div className="mt-3 inline-flex rounded-md shadow-sm border border-gray-200" role="group">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-8 h-8 bg-banking-600 rounded-banking flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <h2 className="text-lg font-bold text-trust-900">
+                    {activeTab === 'escomptes' ? 'Gestion des Escomptes' : 'Suivi des Refinancements'}
+                  </h2>
+                </div>
+                <div className="inline-flex rounded-banking shadow-sm border border-neutral-300 bg-white" role="group">
                   <button
                     type="button"
                     onClick={() => setActiveTab('escomptes')}
-                    className={`px-4 py-1.5 text-sm font-medium rounded-l-md transition-colors ${
-                      activeTab === 'escomptes' ? 'bg-primary-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
+                    className={`px-6 py-2.5 text-sm font-semibold rounded-l-banking transition-all duration-200 ${
+                      activeTab === 'escomptes' 
+                        ? 'bg-banking-600 text-white shadow-sm border-r border-banking-500' 
+                        : 'bg-white text-trust-700 hover:bg-neutral-50 border-r border-neutral-300'
                     }`}
                     aria-pressed={activeTab === 'escomptes' }
                   >
-                    Escomptes
+                    <div className="flex items-center space-x-2">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                      </svg>
+                      <span>Escomptes</span>
+                    </div>
                   </button>
                   <button
                     type="button"
                     onClick={() => setActiveTab('refinancements')}
-                    className={`px-4 py-1.5 text-sm font-medium rounded-r-md transition-colors ${
-                      activeTab === 'refinancements' ? 'bg-primary-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
+                    className={`px-6 py-2.5 text-sm font-semibold rounded-r-banking transition-all duration-200 ${
+                      activeTab === 'refinancements' 
+                        ? 'bg-banking-600 text-white shadow-sm' 
+                        : 'bg-white text-trust-700 hover:bg-neutral-50'
                     }`}
                     aria-pressed={activeTab === 'refinancements'}
                   >
-                    Refinancements
+                    <div className="flex items-center space-x-2">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                      </svg>
+                      <span>Refinancements</span>
+                    </div>
                   </button>
                 </div>
               </div>

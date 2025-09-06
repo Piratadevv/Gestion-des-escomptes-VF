@@ -108,7 +108,7 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
 
         {/* Message */}
         <div className="mb-6">
-          <p className="text-sm text-gray-600 whitespace-pre-line">
+          <p className="text-sm text-neutral-600 whitespace-pre-line font-medium">
             {message}
           </p>
         </div>
@@ -119,9 +119,9 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
             onClick={handleConfirm}
             disabled={isLoading}
             className={`
-              flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md
-              focus:outline-none focus:ring-2 focus:ring-offset-2
-              disabled:opacity-50 disabled:cursor-not-allowed
+              flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-banking
+              focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200
+              disabled:opacity-50 disabled:cursor-not-allowed shadow-banking-sm hover:shadow-banking
               ${getConfirmButtonClasses()}
             `}
           >
@@ -132,7 +132,7 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
           <button
             onClick={onClose}
             disabled={isLoading}
-            className="btn-secondary"
+            className="px-6 py-3 text-sm font-semibold bg-trust-100 hover:bg-trust-200 text-trust-800 rounded-banking border border-trust-300 hover:border-trust-400 focus:outline-none focus:ring-2 focus:ring-trust-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-banking-sm hover:shadow-banking"
           >
             {cancelLabel}
           </button>

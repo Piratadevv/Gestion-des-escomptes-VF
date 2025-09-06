@@ -32,13 +32,13 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   const getColorClasses = () => {
     switch (color) {
       case 'primary':
-        return 'text-primary-600';
+        return 'text-banking-600';
       case 'white':
         return 'text-white';
       case 'gray':
-        return 'text-gray-600';
+        return 'text-neutral-600';
       default:
-        return 'text-primary-600';
+        return 'text-banking-600';
     }
   };
 

@@ -219,7 +219,7 @@ const EscomptesTable: React.FC = () => {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left">
+              <th className="px-6 py-4 text-left">
                 <input
                   type="checkbox"
                   checked={allSelected}
@@ -227,69 +227,69 @@ const EscomptesTable: React.FC = () => {
                     if (input) input.indeterminate = someSelected;
                   }}
                   onChange={(e) => handleSelectAll(e.target.checked)}
-                  className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                  className="rounded border-trust-300 text-banking-600 focus:ring-banking-500 focus:ring-offset-2"
                   aria-label="Sélectionner tous les escomptes"
                 />
               </th>
               
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-left text-xs font-bold text-trust-700 uppercase tracking-wider">
                 <button
                   onClick={() => handleSort('dateRemise')}
-                  className="flex items-center space-x-1 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+                  className="flex items-center space-x-2 hover:text-banking-700 focus:outline-none focus:text-banking-700 hover:bg-banking-100 transition-colors duration-200 rounded-banking px-2 py-1"
                 >
                   <span>Date de remise</span>
                   {getSortIcon('dateRemise')}
                 </button>
               </th>
               
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-left text-xs font-bold text-trust-700 uppercase tracking-wider">
                 <button
                   onClick={() => handleSort('libelle')}
-                  className="flex items-center space-x-1 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+                  className="flex items-center space-x-2 hover:text-banking-700 focus:outline-none focus:text-banking-700 hover:bg-banking-100 transition-colors duration-200 rounded-banking px-2 py-1"
                 >
                   <span>Libellé</span>
                   {getSortIcon('libelle')}
                 </button>
               </th>
               
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-left text-xs font-bold text-trust-700 uppercase tracking-wider">
                 <button
                   onClick={() => handleSort('montant')}
-                  className="flex items-center space-x-1 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+                  className="flex items-center space-x-2 hover:text-banking-700 focus:outline-none focus:text-banking-700 hover:bg-banking-100 transition-colors duration-200 rounded-banking px-2 py-1"
                 >
                   <span>Montant</span>
                   {getSortIcon('montant')}
                 </button>
               </th>
               
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-left text-xs font-bold text-trust-700 uppercase tracking-wider">
                 <button
                   onClick={() => handleSort('ordreSaisie')}
-                  className="flex items-center space-x-1 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+                  className="flex items-center space-x-2 hover:text-banking-700 focus:outline-none focus:text-banking-700 hover:bg-banking-100 transition-colors duration-200 rounded-banking px-2 py-1"
                 >
                   <span>Ordre</span>
                   {getSortIcon('ordreSaisie')}
                 </button>
               </th>
               
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-left text-xs font-bold text-trust-700 uppercase tracking-wider">
                 Créé le
               </th>
               
-              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-4 text-right text-xs font-bold text-trust-700 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
           </thead>
           
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y divide-trust-200">
             {escomptes.map((escompte, index) => (
               <tr
                 key={escompte.id}
                 className={`
-                  hover:bg-gray-50 transition-colors duration-150
-                  ${escompte.id && selectedEscomptes.includes(escompte.id) ? 'bg-primary-50' : ''}
-                  ${index % 2 === 0 ? 'bg-white' : 'bg-gray-25'}
+                  hover:bg-banking-50 transition-colors duration-200
+                  ${escompte.id && selectedEscomptes.includes(escompte.id) ? 'bg-banking-100 border-l-4 border-banking-500' : ''}
+                  ${index % 2 === 0 ? 'bg-white' : 'bg-trust-25'}
                 `}
               >
                 <td className="px-6 py-4 whitespace-nowrap">
@@ -297,39 +297,49 @@ const EscomptesTable: React.FC = () => {
                     type="checkbox"
                     checked={escompte.id ? selectedEscomptes.includes(escompte.id) : false}
                     onChange={(e) => escompte.id && handleSelectEscompte(escompte.id, e.target.checked)}
-                    className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                    className="rounded border-trust-300 text-banking-600 focus:ring-banking-500 focus:ring-offset-2"
                     aria-label={`Sélectionner l'escompte ${escompte.libelle}`}
                     disabled={!escompte.id}
                   />
                 </td>
                 
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {formaterDate(escompte.dateRemise)}
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900">
+                  <div className="flex items-center">
+                    <svg className="w-4 h-4 text-trust-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {formaterDate(escompte.dateRemise)}
+                  </div>
                 </td>
                 
-                <td className="px-6 py-4 text-sm text-gray-900">
-                  <div className="max-w-xs truncate" title={escompte.libelle}>
+                <td className="px-6 py-4 text-sm text-neutral-900">
+                  <div className="max-w-xs truncate font-medium" title={escompte.libelle}>
                     {escompte.libelle}
                   </div>
                 </td>
                 
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  {formaterMontant(escompte.montant)} DH
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-success-700">
+                  <div className="flex items-center">
+                    <span className="text-success-600 mr-1">DH</span>
+                    {formaterMontant(escompte.montant)}
+                  </div>
                 </td>
                 
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  #{escompte.ordreSaisie}
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-trust-600">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-trust-100 text-trust-800">
+                    #{escompte.ordreSaisie}
+                  </span>
                 </td>
                 
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">
                   {escompte.dateCreation ? formaterDate(escompte.dateCreation) : '-'}
                 </td>
                 
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <div className="flex items-center justify-end space-x-2">
+                  <div className="flex items-center justify-end space-x-1">
                     <button
                       onClick={() => handleEdit(escompte)}
-                      className="text-primary-600 hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded p-1"
+                      className="p-2 text-banking-600 hover:text-banking-900 hover:bg-banking-100 focus:outline-none focus:ring-2 focus:ring-banking-500 focus:ring-offset-2 rounded-banking transition-all duration-200"
                       aria-label={`Modifier l'escompte ${escompte.libelle}`}
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -339,7 +349,7 @@ const EscomptesTable: React.FC = () => {
                     
                     <button
                       onClick={() => handleDelete(escompte)}
-                      className="text-danger-600 hover:text-danger-900 focus:outline-none focus:ring-2 focus:ring-danger-500 focus:ring-offset-2 rounded p-1"
+                      className="p-2 text-risk-600 hover:text-risk-900 hover:bg-risk-100 focus:outline-none focus:ring-2 focus:ring-risk-500 focus:ring-offset-2 rounded-banking transition-all duration-200"
                       aria-label={`Supprimer l'escompte ${escompte.libelle}`}
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -356,7 +366,7 @@ const EscomptesTable: React.FC = () => {
 
       {/* Pagination */}
       {pagination.totalPages > 1 && (
-        <div className="bg-white px-6 py-3 border-t border-gray-200">
+        <div className="bg-gradient-to-r from-banking-25 to-trust-25 px-6 py-4 border-t border-trust-200">
           <Pagination
             currentPage={pagination.page}
             totalPages={pagination.totalPages}
