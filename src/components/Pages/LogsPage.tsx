@@ -295,7 +295,7 @@ const LogsPage: React.FC = () => {
                   {logs.map((log) => (
                     <tr key={log.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {formaterDateHeure(log.timestamp, 'DD/MM/YYYY HH:mm:ss')}
+                        {formaterDateHeure(log.timestamp, 'dd/MM/yyyy HH:mm:ss')}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${getActionColor(log.action)}`}>

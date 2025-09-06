@@ -47,8 +47,7 @@ export const loggingMiddleware: Middleware = (store) => (next) => (action) => {
     if (logEntry) {
       // Dispatch l'action de log de manière asynchrone pour éviter les problèmes de performance
       setTimeout(() => {
-        store.dispatch(addLogEntry(logEntry));
-        // Also send to backend via createLogEntry thunk
+        // Send to backend via createLogEntry thunk (this will also add to store when successful)
         import('../slices/logsSlice').then(({ createLogEntry }) => {
           const thunkAction = createLogEntry({
             action: logEntry.action,
@@ -74,30 +73,30 @@ export const loggingMiddleware: Middleware = (store) => (next) => (action) => {
  * Détermine si une action est significative et doit déclencher le début du logging
  */
 function isSignificantAction(actionType: string): boolean {
-  // Actions qui déclenchent le début du logging
+  // Actions qui déclenchent le début du logging - seulement les actions 'fulfilled'
   const significantActions = [
     // Actions d'escomptes
-    'escomptes/createEscompte',
-    'escomptes/updateEscompte',
-    'escomptes/deleteEscompte',
-    'escomptes/exportEscomptes',
+    'escomptes/createEscompte/fulfilled',
+    'escomptes/updateEscompte/fulfilled',
+    'escomptes/deleteEscompte/fulfilled',
+    'escomptes/exportEscomptes/fulfilled',
     
     // Actions de refinancements
-    'refinancements/createRefinancement',
-    'refinancements/updateRefinancement',
-    'refinancements/deleteRefinancement',
-    'refinancements/exportRefinancements',
+    'refinancements/createRefinancement/fulfilled',
+    'refinancements/updateRefinancement/fulfilled',
+    'refinancements/deleteRefinancement/fulfilled',
+    'refinancements/exportRefinancements/fulfilled',
     
     // Actions d'authentification
-    'auth/login',
-    'auth/logout',
+    'auth/login/fulfilled',
+    'auth/logout/fulfilled',
     
     // Actions de configuration
-    'configuration/update',
-    'configuration/updateConfiguration'
+    'configuration/update/fulfilled',
+    'configuration/updateConfiguration/fulfilled'
   ];
   
-  return significantActions.some(action => actionType.startsWith(action));
+  return significantActions.includes(actionType);
 }
 
 /**
@@ -118,8 +117,17 @@ function createLogEntryFromAction(
     return null; // Ignorer les actions non pertinentes
   }
 
+  // For delete actions, get entity data from previous state
+  let enhancedPayload = action.payload;
+  if (logAction === 'DELETE' && entityId) {
+    const entityData = getEntityFromState(prevState, entityType, entityId);
+    if (entityData) {
+      enhancedPayload = { ...action.payload, entityData };
+    }
+  }
+
   // Créer la description de log
-  const description = createLogMessage(actionType, action.payload, logAction, entityType);
+  const description = createLogMessage(actionType, enhancedPayload, logAction, entityType);
 
   // Capturer les changements d'état pertinents
   const changes = captureStateChanges(prevState, nextState, category, entityType);
@@ -137,7 +145,7 @@ function createLogEntryFromAction(
     changes,
     metadata: {
       actionType,
-      payload: action.payload,
+      payload: enhancedPayload,
       userAgent: navigator.userAgent,
       url: window.location.pathname
     }
@@ -154,9 +162,12 @@ function parseActionType(actionType: string, payload: any): {
   entityType: string | null;
   entityId: string | null;
 } {
+  // Remove '/fulfilled' suffix for parsing
+  const baseActionType = actionType.replace('/fulfilled', '');
+  
   // Actions des escomptes
-  if (actionType.startsWith('escomptes/')) {
-    if (actionType.includes('create') || actionType.includes('add')) {
+  if (baseActionType.startsWith('escomptes/')) {
+    if (baseActionType.includes('create') || baseActionType.includes('add')) {
       return {
           category: 'data',
           logAction: 'CREATE',
@@ -165,7 +176,7 @@ function parseActionType(actionType: string, payload: any): {
           entityId: payload?.id || null
         };
     }
-    if (actionType.includes('update') || actionType.includes('edit')) {
+    if (baseActionType.includes('update') || baseActionType.includes('edit')) {
       return {
           category: 'data',
           logAction: 'UPDATE',
@@ -174,16 +185,16 @@ function parseActionType(actionType: string, payload: any): {
           entityId: payload?.id || null
         };
     }
-    if (actionType.includes('delete') || actionType.includes('remove')) {
+    if (baseActionType.includes('delete') || baseActionType.includes('remove')) {
       return {
           category: 'data',
           logAction: 'DELETE',
           severity: 'HIGH',
           entityType: 'escompte',
-          entityId: payload?.id || payload?.ids?.[0] || null
+          entityId: typeof payload === 'string' ? payload : (payload?.id || payload?.ids?.[0] || null)
         };
     }
-    if (actionType.includes('fetch') || actionType.includes('load') || actionType.includes('export')) {
+    if (baseActionType.includes('fetch') || baseActionType.includes('load') || baseActionType.includes('export')) {
       return {
           category: 'system',
           logAction: 'EXPORT',
@@ -195,8 +206,8 @@ function parseActionType(actionType: string, payload: any): {
   }
 
   // Actions des refinancements
-  if (actionType.startsWith('refinancements/')) {
-    if (actionType.includes('create') || actionType.includes('add')) {
+  if (baseActionType.startsWith('refinancements/')) {
+    if (baseActionType.includes('create') || baseActionType.includes('add')) {
       return {
           category: 'data',
           logAction: 'CREATE',
@@ -205,7 +216,7 @@ function parseActionType(actionType: string, payload: any): {
           entityId: payload?.id || null
         };
     }
-    if (actionType.includes('update') || actionType.includes('edit')) {
+    if (baseActionType.includes('update') || baseActionType.includes('edit')) {
       return {
           category: 'data',
           logAction: 'UPDATE',
@@ -214,16 +225,16 @@ function parseActionType(actionType: string, payload: any): {
           entityId: payload?.id || null
         };
     }
-    if (actionType.includes('delete') || actionType.includes('remove')) {
+    if (baseActionType.includes('delete') || baseActionType.includes('remove')) {
       return {
           category: 'data',
           logAction: 'DELETE',
           severity: 'HIGH',
           entityType: 'refinancement',
-          entityId: payload?.id || payload?.ids?.[0] || null
+          entityId: typeof payload === 'string' ? payload : (payload?.id || payload?.ids?.[0] || null)
         };
     }
-    if (actionType.includes('fetch') || actionType.includes('load') || actionType.includes('export')) {
+    if (baseActionType.includes('fetch') || baseActionType.includes('load') || baseActionType.includes('export')) {
       return {
           category: 'system',
           logAction: 'EXPORT',
@@ -235,8 +246,8 @@ function parseActionType(actionType: string, payload: any): {
   }
 
   // Actions de configuration
-  if (actionType.startsWith('configuration/')) {
-    if (actionType.includes('update') || actionType.includes('save')) {
+  if (baseActionType.startsWith('configuration/')) {
+    if (baseActionType.includes('update') || baseActionType.includes('save')) {
       return {
           category: 'configuration',
           logAction: 'UPDATE',
@@ -245,7 +256,7 @@ function parseActionType(actionType: string, payload: any): {
           entityId: 'global'
         };
     }
-    if (actionType.includes('fetch') || actionType.includes('load')) {
+    if (baseActionType.includes('fetch') || baseActionType.includes('load')) {
       return {
           category: 'system',
           logAction: 'EXPORT',
@@ -257,7 +268,7 @@ function parseActionType(actionType: string, payload: any): {
   }
 
   // Actions de l'interface utilisateur
-  if (actionType.startsWith('ui/')) {
+  if (baseActionType.startsWith('ui/')) {
     return {
           category: 'ui',
           logAction: 'UPDATE',
@@ -268,7 +279,7 @@ function parseActionType(actionType: string, payload: any): {
   }
 
   // Actions du tableau de bord
-  if (actionType.startsWith('dashboard/')) {
+  if (baseActionType.startsWith('dashboard/')) {
     return {
           category: 'system',
           logAction: 'EXPORT',
@@ -320,17 +331,54 @@ function createLogMessage(
 ): string {
   const entityName = entityType ? entityType.charAt(0).toUpperCase() + entityType.slice(1) : 'Élément';
   
+  // Extract entity name/libelle from payload
+  const getEntityDisplayName = () => {
+    // For delete actions, check entityData first
+    if (payload?.entityData) {
+      const entity = payload.entityData;
+      if (entity.libelle) {
+        return `"${entity.libelle}"`;
+      }
+      if (entity.nom) {
+        return `"${entity.nom}"`;
+      }
+      if (entity.name) {
+        return `"${entity.name}"`;
+      }
+      if (entity.title) {
+        return `"${entity.title}"`;
+      }
+    }
+    
+    // Fallback to direct payload properties
+    if (payload?.libelle) {
+      return `"${payload.libelle}"`;
+    }
+    if (payload?.nom) {
+      return `"${payload.nom}"`;
+    }
+    if (payload?.name) {
+      return `"${payload.name}"`;
+    }
+    if (payload?.title) {
+      return `"${payload.title}"`;
+    }
+    return payload?.id ? `(ID: ${payload.id})` : '';
+  };
+  
+  const displayName = getEntityDisplayName();
+  
   switch (logAction) {
     case 'CREATE':
-      return `${entityName} créé${payload?.id ? ` (ID: ${payload.id})` : ''}`;
+      return `${entityName} ${displayName} créé`;
     case 'UPDATE':
-      return `${entityName} modifié${payload?.id ? ` (ID: ${payload.id})` : ''}`;
+      return `${entityName} ${displayName} modifié`;
     case 'DELETE':
       const ids = payload?.ids || (payload?.id ? [payload.id] : []);
       if (ids.length > 1) {
         return `${ids.length} ${entityType}s supprimés`;
       }
-      return `${entityName} supprimé${ids[0] ? ` (ID: ${ids[0]})` : ''}`;
+      return `${entityName} ${displayName} supprimé`;
     case 'LOGIN':
     case 'LOGOUT':
     case 'EXPORT':
@@ -345,6 +393,22 @@ function createLogMessage(
 /**
  * Capture les changements d'état pertinents
  */
+/**
+ * Helper function to get entity data from state
+ */
+function getEntityFromState(state: RootState, entityType: string | null, entityId: string): any {
+  if (!entityType || !entityId) return null;
+
+  switch (entityType) {
+    case 'escompte':
+      return state.escomptes.escomptes.find(e => e.id === entityId);
+    case 'refinancement':
+      return state.refinancements.refinancements.find(r => r.id === entityId);
+    default:
+      return null;
+  }
+}
+
 function captureStateChanges(
   prevState: RootState,
   nextState: RootState,
