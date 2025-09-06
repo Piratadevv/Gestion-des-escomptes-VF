@@ -120,9 +120,19 @@ function createLogEntryFromAction(
   // For delete actions, get entity data from previous state
   let enhancedPayload = action.payload;
   if (logAction === 'DELETE' && entityId) {
+    console.log('DELETE action detected:', {
+      actionType,
+      entityType,
+      entityId,
+      payload: action.payload
+    });
     const entityData = getEntityFromState(prevState, entityType, entityId);
+    console.log('Entity data from previous state:', entityData);
     if (entityData) {
       enhancedPayload = { ...action.payload, entityData };
+      console.log('Enhanced payload:', enhancedPayload);
+    } else {
+      console.log('No entity data found in previous state');
     }
   }
 
@@ -186,12 +196,18 @@ function parseActionType(actionType: string, payload: any): {
         };
     }
     if (baseActionType.includes('delete') || baseActionType.includes('remove')) {
+      const entityId = typeof payload === 'string' ? payload : (payload?.id || payload?.ids?.[0] || null);
+      console.log('Parsing DELETE action:', {
+        baseActionType,
+        payload,
+        entityId
+      });
       return {
           category: 'data',
           logAction: 'DELETE',
           severity: 'HIGH',
           entityType: 'escompte',
-          entityId: typeof payload === 'string' ? payload : (payload?.id || payload?.ids?.[0] || null)
+          entityId
         };
     }
     if (baseActionType.includes('fetch') || baseActionType.includes('load') || baseActionType.includes('export')) {

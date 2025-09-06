@@ -5244,3 +5244,1947 @@
   level: 'info',
   message: 'GET /api/dashboard/kpi?_t=1757197470670 - 200'
 }
+{
+  message: '::1 - - [06/Sep/2025:22:24:46 +0000] "GET /api/dashboard/kpi?_t=1757197486644 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:24:46'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757197486644',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:24:46',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757197486644 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:25:00 +0000] "GET /api/dashboard/kpi?_t=1757197500653 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:25:00'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757197500653',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:25:00',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757197500653 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:25:30 +0000] "GET /api/dashboard/kpi?_t=1757197530656 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:25:30'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757197530656',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:25:30',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757197530656 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:25:46 +0000] "GET /api/dashboard/kpi?_t=1757197546644 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:25:46'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757197546644',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:25:46',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757197546644 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:49 +0000] "GET /api/configuration?_t=1757198209517 HTTP/1.1" 200 31 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:49'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198209517',
+  statusCode: 200,
+  responseTime: '8ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:49',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198209517 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:49 +0000] "GET /api/dashboard/kpi?_t=1757198209517 HTTP/1.1" 200 259 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:49'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198209517',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:49',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198209517 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:49 +0000] "GET /api/configuration?_t=1757198209517 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:49'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198209517',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:49',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198209517 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:49 +0000] "GET /api/dashboard/kpi?_t=1757198209517 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:49'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198209517',
+  statusCode: 304,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:49',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198209517 - 304'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198209621"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:49'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:36:49',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198209621'
+  },
+  totalRecords: 3,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:36:49',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 3,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:49 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198209621 HTTP/1.1" 200 871 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:49'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198209621',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:49',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198209621 - 200'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198209621"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:49'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:36:49',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198209621'
+  },
+  totalRecords: 3,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:36:49',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 3,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:49 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198209621 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:49'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198209621',
+  statusCode: 304,
+  responseTime: '3ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:49',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198209621 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:52 +0000] "DELETE /api/escomptes/2?_t=1757198212245 HTTP/1.1" 200 271 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:52'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'DELETE',
+  url: '/api/escomptes/2?_t=1757198212245',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:52',
+  level: 'info',
+  message: 'DELETE /api/escomptes/2?_t=1757198212245 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:52 +0000] "POST /api/logs?_t=1757198212265 HTTP/1.1" 201 810 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:52'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'POST',
+  url: '/api/logs?_t=1757198212265',
+  statusCode: 201,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:52',
+  level: 'info',
+  message: 'POST /api/logs?_t=1757198212265 - 201'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:54 +0000] "GET /api/configuration?_t=1757198214034 HTTP/1.1" 200 31 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198214034',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:54',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198214034 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:54 +0000] "GET /api/dashboard/kpi?_t=1757198214034 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198214034',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:54',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198214034 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:54 +0000] "GET /api/configuration?_t=1757198214034 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198214034',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:54',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198214034 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:54 +0000] "GET /api/dashboard/kpi?_t=1757198214034 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198214034',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:54',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198214034 - 304'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198214058"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:54'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:36:54',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198214058'
+  },
+  totalRecords: 2,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:36:54',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 2,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:54 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198214058 HTTP/1.1" 200 599 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198214058',
+  statusCode: 200,
+  responseTime: '3ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:54',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198214058 - 200'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198214058"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:54'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:36:54',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198214058'
+  },
+  totalRecords: 2,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:36:54',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 2,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:54 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198214058 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198214058',
+  statusCode: 304,
+  responseTime: '3ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:54',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198214058 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:56 +0000] "GET /api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198216877 HTTP/1.1" 200 1092 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:56'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198216877',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:56',
+  level: 'info',
+  message: 'GET /api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198216877 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:56 +0000] "GET /api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198216877 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:56'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198216877',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:56',
+  level: 'info',
+  message: 'GET /api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198216877 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:57 +0000] "GET /api/logs?page=1&limit=50&_t=1757198217587 HTTP/1.1" 200 3005 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:57'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198217587',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:57',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198217587 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:57 +0000] "GET /api/logs?page=1&limit=50&_t=1757198217587 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:57'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198217587',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:57',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198217587 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:57 +0000] "GET /api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198217938 HTTP/1.1" 200 1092 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:57'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198217938',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:57',
+  level: 'info',
+  message: 'GET /api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198217938 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:57 +0000] "GET /api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198217938 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:57'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198217938',
+  statusCode: 304,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:57',
+  level: 'info',
+  message: 'GET /api/refinancements?page=1&limit=10&sortField=dateRefinancement&sortDirection=desc&_t=1757198217938 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:59 +0000] "GET /api/logs?page=1&limit=50&_t=1757198219111 HTTP/1.1" 200 3005 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:59'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198219111',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:59',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198219111 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:36:59 +0000] "GET /api/logs?page=1&limit=50&_t=1757198219111 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:36:59'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198219111',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:36:59',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198219111 - 304'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198221824"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:01'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:37:01',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198221824'
+  },
+  totalRecords: 2,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:37:01',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 2,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:01 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198221824 HTTP/1.1" 200 599 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:01'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198221824',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:01',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198221824 - 200'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198221824"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:01'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:37:01',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198221824'
+  },
+  totalRecords: 2,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:37:01',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 2,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:01 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198221824 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:01'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198221824',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:01',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198221824 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:03 +0000] "GET /api/logs?page=1&limit=50&_t=1757198223900 HTTP/1.1" 200 3005 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:03'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198223900',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:03',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198223900 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:03 +0000] "GET /api/logs?page=1&limit=50&_t=1757198223900 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:03'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198223900',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:03',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198223900 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:19 +0000] "GET /api/logs?page=1&limit=50&_t=1757198239201 HTTP/1.1" 200 3005 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:19'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198239201',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:19',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198239201 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:19 +0000] "GET /api/logs?page=1&limit=50&_t=1757198239201 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:19'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198239201',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:19',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198239201 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:24 +0000] "GET /api/dashboard/kpi?_t=1757198244037 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:24'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198244037',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:24',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198244037 - 200'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198250717"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:30'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:37:30',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198250717'
+  },
+  totalRecords: 2,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:37:30',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 2,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:30 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198250717 HTTP/1.1" 200 599 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:30'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198250717',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:30',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198250717 - 200'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198250717"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:30'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:37:30',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198250717'
+  },
+  totalRecords: 2,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:37:30',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 2,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:30 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198250717 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:30'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198250717',
+  statusCode: 304,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:30',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198250717 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:41 +0000] "POST /api/escomptes?_t=1757198261343 HTTP/1.1" 201 150 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:41'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'POST',
+  url: '/api/escomptes?_t=1757198261343',
+  statusCode: 201,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:41',
+  level: 'info',
+  message: 'POST /api/escomptes?_t=1757198261343 - 201'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:41 +0000] "POST /api/logs?_t=1757198261370 HTTP/1.1" 201 690 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:41'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'POST',
+  url: '/api/logs?_t=1757198261370',
+  statusCode: 201,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:41',
+  level: 'info',
+  message: 'POST /api/logs?_t=1757198261370 - 201'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:42 +0000] "GET /api/logs?page=1&limit=50&_t=1757198262275 HTTP/1.1" 200 3696 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:42'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198262275',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:42',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198262275 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:42 +0000] "GET /api/logs?page=1&limit=50&_t=1757198262275 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:42'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198262275',
+  statusCode: 304,
+  responseTime: '4ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:42',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198262275 - 304'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198263421"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:43'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:37:43',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198263421'
+  },
+  totalRecords: 3,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:37:43',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 3,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:43 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198263421 HTTP/1.1" 200 750 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:43'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198263421',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:43',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198263421 - 200'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198263421"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:43'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:37:43',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198263421'
+  },
+  totalRecords: 3,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:37:43',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 3,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:43 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198263421 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:43'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198263421',
+  statusCode: 304,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:43',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198263421 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:46 +0000] "DELETE /api/escomptes/3?_t=1757198266110 HTTP/1.1" 200 267 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:46'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'DELETE',
+  url: '/api/escomptes/3?_t=1757198266110',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:46',
+  level: 'info',
+  message: 'DELETE /api/escomptes/3?_t=1757198266110 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:46 +0000] "POST /api/logs?_t=1757198266127 HTTP/1.1" 201 806 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:46'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'POST',
+  url: '/api/logs?_t=1757198266127',
+  statusCode: 201,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:46',
+  level: 'info',
+  message: 'POST /api/logs?_t=1757198266127 - 201'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:47 +0000] "GET /api/logs?page=1&limit=50&_t=1757198267884 HTTP/1.1" 200 4503 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:47'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198267884',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:47',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198267884 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:47 +0000] "GET /api/logs?page=1&limit=50&_t=1757198267884 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:47'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198267884',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:47',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198267884 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:37:54 +0000] "GET /api/dashboard/kpi?_t=1757198274042 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:37:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198274042',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:37:54',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198274042 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:38:24 +0000] "GET /api/dashboard/kpi?_t=1757198304659 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:38:24'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198304659',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:38:24',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198304659 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:38:54 +0000] "GET /api/dashboard/kpi?_t=1757198334646 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:38:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198334646',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:38:54',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198334646 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:24 +0000] "GET /api/dashboard/kpi?_t=1757198364641 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:24'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198364641',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:24',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198364641 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:51 +0000] "GET /api/configuration?_t=1757198391234 HTTP/1.1" 200 31 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:51'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198391234',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:51',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198391234 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:51 +0000] "GET /api/dashboard/kpi?_t=1757198391234 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:51'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198391234',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:51',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198391234 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:51 +0000] "GET /api/configuration?_t=1757198391234 HTTP/1.1" 304 - "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:51'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198391234',
+  statusCode: 304,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:51',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198391234 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:51 +0000] "GET /api/dashboard/kpi?_t=1757198391234 HTTP/1.1" 304 - "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:51'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198391234',
+  statusCode: 304,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:51',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198391234 - 304'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198391336"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:51'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:39:51',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198391336'
+  },
+  totalRecords: 2,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:39:51',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 2,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:51 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198391336 HTTP/1.1" 200 482 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:51'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198391336',
+  statusCode: 200,
+  responseTime: '3ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:51',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198391336 - 200'
+}
+{
+  message: 'GET /api/escomptes - Query: {"page":"1","limit":"10","sortField":"dateRemise","sortDirection":"desc","_t":"1757198391336"}',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:51'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Récupération de la liste des escomptes Récupération de la liste des escomptes',
+  timestamp: '2025-09-06 23:39:51',
+  action: 'GET_ESCOMPTES',
+  filters: [Object: null prototype] {
+    page: '1',
+    limit: '10',
+    sortField: 'dateRemise',
+    sortDirection: 'desc',
+    _t: '1757198391336'
+  },
+  totalRecords: 2,
+  level: 'info'
+}
+{
+  service: 'gestionesc-backend',
+  message: 'Liste des escomptes retournée avec succès Liste des escomptes retournée avec succès',
+  timestamp: '2025-09-06 23:39:51',
+  action: 'GET_ESCOMPTES_SUCCESS',
+  resultCount: 2,
+  filtersApplied: true,
+  level: 'info'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:51 +0000] "GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198391336 HTTP/1.1" 304 - "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:51'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198391336',
+  statusCode: 304,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:51',
+  level: 'info',
+  message: 'GET /api/escomptes?page=1&limit=10&sortField=dateRemise&sortDirection=desc&_t=1757198391336 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:54 +0000] "GET /api/dashboard/kpi?_t=1757198394654 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198394654',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:54',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198394654 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:55 +0000] "DELETE /api/escomptes/3?_t=1757198395916 HTTP/1.1" 200 150 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:55'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'DELETE',
+  url: '/api/escomptes/3?_t=1757198395916',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:55',
+  level: 'info',
+  message: 'DELETE /api/escomptes/3?_t=1757198395916 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:55 +0000] "POST /api/logs?_t=1757198395940 HTTP/1.1" 201 717 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:55'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'POST',
+  url: '/api/logs?_t=1757198395940',
+  statusCode: 201,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:55',
+  level: 'info',
+  message: 'POST /api/logs?_t=1757198395940 - 201'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:57 +0000] "GET /api/logs?page=1&limit=50&_t=1757198397589 HTTP/1.1" 200 5222 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:57'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198397589',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:57',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198397589 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:39:57 +0000] "GET /api/logs?page=1&limit=50&_t=1757198397589 HTTP/1.1" 304 - "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:39:57'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198397589',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:39:57',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198397589 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:04 +0000] "GET /api/configuration?_t=1757198404490 HTTP/1.1" 200 31 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:04'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198404490',
+  statusCode: 200,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:04',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198404490 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:04 +0000] "GET /api/dashboard/kpi?_t=1757198404490 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:04'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198404490',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:04',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198404490 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:04 +0000] "GET /api/configuration?_t=1757198404490 HTTP/1.1" 200 31 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:04'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198404490',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:04',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198404490 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:04 +0000] "GET /api/dashboard/kpi?_t=1757198404490 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:04'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198404490',
+  statusCode: 200,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:04',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198404490 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:17 +0000] "GET /api/configuration?_t=1757198417438 HTTP/1.1" 200 31 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:17'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198417438',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:17',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198417438 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:17 +0000] "GET /api/dashboard/kpi?_t=1757198417438 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:17'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198417438',
+  statusCode: 200,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:17',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198417438 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:17 +0000] "GET /api/logs?page=1&limit=50&_t=1757198417451 HTTP/1.1" 200 5222 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:17'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198417451',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:17',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198417451 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:17 +0000] "GET /api/configuration?_t=1757198417451 HTTP/1.1" 200 31 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:17'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198417451',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:17',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198417451 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:17 +0000] "GET /api/dashboard/kpi?_t=1757198417451 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:17'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198417451',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:17',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198417451 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:17 +0000] "GET /api/logs?page=1&limit=50&_t=1757198417598 HTTP/1.1" 200 5222 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:17'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198417598',
+  statusCode: 200,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:17',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198417598 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:17 +0000] "GET /api/configuration?_t=1757198417598 HTTP/1.1" 200 31 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:17'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198417598',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:17',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198417598 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:17 +0000] "GET /api/dashboard/kpi?_t=1757198417598 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:17'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198417598',
+  statusCode: 200,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:17',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198417598 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:21 +0000] "GET /api/configuration?_t=1757198421185 HTTP/1.1" 200 31 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:21'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198421185',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:21',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198421185 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:21 +0000] "GET /api/dashboard/kpi?_t=1757198421185 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:21'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198421185',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:21',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198421185 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:21 +0000] "GET /api/configuration?_t=1757198421185 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:21'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198421185',
+  statusCode: 304,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:21',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198421185 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:21 +0000] "GET /api/dashboard/kpi?_t=1757198421185 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:21'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198421185',
+  statusCode: 304,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:21',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198421185 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:21 +0000] "GET /api/logs?page=1&limit=50&_t=1757198421219 HTTP/1.1" 200 5222 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:21'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198421219',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:21',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198421219 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:21 +0000] "GET /api/logs?page=1&limit=50&_t=1757198421219 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:21'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198421219',
+  statusCode: 304,
+  responseTime: '0ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:21',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198421219 - 304'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:23 +0000] "GET /api/logs?page=1&limit=50&_t=1757198423709 HTTP/1.1" 200 5222 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:23'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198423709',
+  statusCode: 200,
+  responseTime: '2ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:23',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198423709 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:23 +0000] "GET /api/configuration?_t=1757198423709 HTTP/1.1" 200 31 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:23'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198423709',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:23',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198423709 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:23 +0000] "GET /api/dashboard/kpi?_t=1757198423709 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:23'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198423709',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:23',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198423709 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:23 +0000] "GET /api/configuration?_t=1757198423759 HTTP/1.1" 200 31 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:23'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198423759',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:23',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198423759 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:23 +0000] "GET /api/dashboard/kpi?_t=1757198423759 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:23'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198423759',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:23',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198423759 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:24 +0000] "GET /api/logs?page=1&limit=50&_t=1757198424388 HTTP/1.1" 200 5222 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:24'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/logs?page=1&limit=50&_t=1757198424388',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:24',
+  level: 'info',
+  message: 'GET /api/logs?page=1&limit=50&_t=1757198424388 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:24 +0000] "GET /api/configuration?_t=1757198424388 HTTP/1.1" 200 31 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:24'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/configuration?_t=1757198424388',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:24',
+  level: 'info',
+  message: 'GET /api/configuration?_t=1757198424388 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:24 +0000] "GET /api/dashboard/kpi?_t=1757198424388 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:24'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198424388',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:24',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198424388 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:53 +0000] "GET /api/dashboard/kpi?_t=1757198453766 HTTP/1.1" 200 257 "http://localhost:3002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:53'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198453766',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:53',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198453766 - 200'
+}
+{
+  message: '::1 - - [06/Sep/2025:22:40:54 +0000] "GET /api/dashboard/kpi?_t=1757198454645 HTTP/1.1" 200 257 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"',
+  level: 'info',
+  service: 'gestionesc-backend',
+  timestamp: '2025-09-06 23:40:54'
+}
+{
+  service: 'gestionesc-backend',
+  method: 'GET',
+  url: '/api/dashboard/kpi?_t=1757198454645',
+  statusCode: 200,
+  responseTime: '1ms',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+  ip: '::1',
+  timestamp: '2025-09-06 23:40:54',
+  level: 'info',
+  message: 'GET /api/dashboard/kpi?_t=1757198454645 - 200'
+}
