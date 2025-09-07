@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 
 interface AuthContextType {
   isAuthenticated: boolean;
+  username: string | null;
   login: (username: string, password: string) => boolean;
   logout: () => void;
   loading: boolean;
@@ -14,26 +15,34 @@ interface AuthProviderProps {
 }
 
 // Predefined credentials
-const VALID_USERNAME = 'USERtest';
-const VALID_PASSWORD = 'test123';
+const VALID_USERS = [
+  { username: 'USERtest', password: 'test123' },
+  { username: 'abderrahmane', password: 'test123' }
+];
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [username, setUsername] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     // Check if user was previously authenticated
     const savedAuthState = localStorage.getItem('isAuthenticated');
-    if (savedAuthState === 'true') {
+    const savedUsername = localStorage.getItem('username');
+    if (savedAuthState === 'true' && savedUsername) {
       setIsAuthenticated(true);
+      setUsername(savedUsername);
     }
     setLoading(false);
   }, []);
 
   const login = (username: string, password: string): boolean => {
-    if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+    const validUser = VALID_USERS.find(user => user.username === username && user.password === password);
+    if (validUser) {
       setIsAuthenticated(true);
+      setUsername(username);
       localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('username', username);
       return true;
     }
     return false;
@@ -41,11 +50,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = (): void => {
     setIsAuthenticated(false);
+    setUsername(null);
     localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('username');
   };
 
   const value: AuthContextType = {
     isAuthenticated,
+    username,
     login,
     logout,
     loading

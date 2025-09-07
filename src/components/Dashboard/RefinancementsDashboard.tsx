@@ -91,32 +91,37 @@ const RefinancementsDashboard: React.FC = () => {
   });
 
   return (
-    <div>
-      {/* Header avec actions */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg font-semibold text-gray-900">Tableau de Bord - Refinancements</h2>
-        <div className="flex space-x-2">
-          <button
-            onClick={handleRefresh}
-            disabled={refreshing}
-            className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50"
-          >
-            <svg className={`w-4 h-4 mr-1 inline ${refreshing ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-            {refreshing ? 'Actualisation...' : 'Actualiser'}
-          </button>
-
+    <div className="mt-6">
+      <div className="space-y-8">
+        {/* Header avec actions */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-6">
+          <div className="flex items-center justify-end space-x-4">
+            <button
+              onClick={handleRefresh}
+              disabled={refreshing}
+              className="btn-secondary flex items-center space-x-2 text-sm sm:text-base px-4 py-2.5 min-w-[120px] justify-center"
+            >
+              <svg 
+                className={`w-4 h-4 sm:w-5 sm:h-5 ${refreshing ? 'animate-spin' : ''}`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              <span>{refreshing ? 'Actualisation...' : 'Actualiser'}</span>
+            </button>
+          </div>
         </div>
-      </div>
 
       {/* Cartes de statistiques */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
         <StatCard
           title="Total Refinancé"
           value={formaterMontant(totalMontantRefinance)}
           subtitle={`${refinancements.length} refinancement${refinancements.length > 1 ? 's' : ''}`}
           color="green"
+          className="transform hover:scale-105 transition-transform duration-200"
         />
         
         <StatCard
@@ -124,6 +129,7 @@ const RefinancementsDashboard: React.FC = () => {
           value={formaterMontant(montantActif)}
           subtitle={`${refinancementsActifs.length} actif${refinancementsActifs.length > 1 ? 's' : ''}`}
           color="green"
+          className="transform hover:scale-105 transition-transform duration-200"
         />
         
         <StatCard
@@ -131,6 +137,7 @@ const RefinancementsDashboard: React.FC = () => {
           value={formaterMontant(totalInterets)}
           subtitle="Coût total"
           color="green"
+          className="transform hover:scale-105 transition-transform duration-200"
         />
         
         <StatCard
@@ -138,46 +145,56 @@ const RefinancementsDashboard: React.FC = () => {
           value={refinancementsCetteSemaine.length.toString()}
           subtitle={`${refinancementsAujourdhui.length} aujourd'hui`}
           color="green"
+          className="transform hover:scale-105 transition-transform duration-200"
         />
       </div>
 
       {/* Alertes */}
       {refinancementsEcheanceProche.length > 0 && (
-        <div className="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-          <div className="flex items-center">
-            <svg className="w-5 h-5 text-yellow-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-            </svg>
-            <div>
-              <h3 className="text-sm font-medium text-yellow-800">
-                Échéances à venir
-              </h3>
-              <p className="text-sm text-yellow-700 mt-1">
-                {refinancementsEcheanceProche.length} refinancement{refinancementsEcheanceProche.length > 1 ? 's' : ''} arrive{refinancementsEcheanceProche.length > 1 ? 'nt' : ''} à échéance dans les 30 prochains jours.
-                Vérifiez les dates d'échéance pour planifier les remboursements.
-              </p>
+        <div className="mb-8">
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg shadow-sm">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <svg className="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base sm:text-lg font-semibold text-yellow-800 mb-2">
+                  Échéances à venir
+                </h3>
+                <p className="text-sm sm:text-base text-yellow-700 leading-relaxed">
+                  {refinancementsEcheanceProche.length} refinancement{refinancementsEcheanceProche.length > 1 ? 's' : ''} arrive{refinancementsEcheanceProche.length > 1 ? 'nt' : ''} à échéance dans les 30 prochains jours.
+                  Vérifiez les dates d'échéance pour planifier les remboursements.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       )}
 
       {refinancements.length === 0 && (
-        <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <div className="flex items-center">
-            <svg className="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-            </svg>
-            <div>
-              <h3 className="text-sm font-medium text-blue-800">
-                Aucun refinancement
-              </h3>
-              <p className="text-sm text-blue-700 mt-1">
-                Vous n'avez pas encore de refinancements enregistrés. Cliquez sur "Nouveau Refinancement" pour commencer.
-              </p>
+        <div className="mb-8">
+          <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg shadow-sm">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0">
+                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base sm:text-lg font-semibold text-blue-800 mb-2">
+                  Aucun refinancement
+                </h3>
+                <p className="text-sm sm:text-base text-blue-700 leading-relaxed">
+                  Vous n'avez pas encore de refinancements enregistrés. Cliquez sur "Nouveau Refinancement" pour commencer.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

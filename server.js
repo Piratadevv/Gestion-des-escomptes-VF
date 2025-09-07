@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 // Data already defined above
 
 let configurationData = {
-  autorisationBancaire: 100000
+  autorisationBancaire: 200000
 };
 
 // Routes de base
@@ -243,11 +243,11 @@ const initialEscomptes = [
     id: '1',
     numeroEffet: 'EFF001',
     nomTireur: 'Société ABC',
-    montant: 15000.00,
+    montant: 45000.00,
     dateEcheance: '2025-04-15',
     tauxEscompte: 8.5,
-    fraisCommission: 150.00,
-    montantNet: 14850.00,
+    fraisCommission: 450.00,
+    montantNet: 44550.00,
     statut: 'ACTIF',
     dateCreation: '2025-01-23T10:00:00.000Z',
     dateModification: '2025-01-23T10:00:00.000Z'
@@ -256,25 +256,12 @@ const initialEscomptes = [
     id: '2',
     numeroEffet: 'EFF002',
     nomTireur: 'Entreprise XYZ',
-    montant: 25000.00,
+    montant: 35000.00,
     dateEcheance: '2025-05-20',
     tauxEscompte: 7.2,
-    fraisCommission: 200.00,
-    montantNet: 24800.00,
+    fraisCommission: 350.00,
+    montantNet: 34650.00,
     statut: 'ACTIF',
-    dateCreation: '2025-01-23T10:00:00.000Z',
-    dateModification: '2025-01-23T10:00:00.000Z'
-  },
-  {
-    id: '3',
-    numeroEffet: 'EFF003',
-    nomTireur: 'Commerce DEF',
-    montant: 8000.00,
-    dateEcheance: '2025-03-30',
-    tauxEscompte: 9.0,
-    fraisCommission: 80.00,
-    montantNet: 7920.00,
-    statut: 'SUSPENDU',
     dateCreation: '2025-01-23T10:00:00.000Z',
     dateModification: '2025-01-23T10:00:00.000Z'
   }
@@ -286,15 +273,15 @@ const initialRefinancements = [
   {
     id: '1',
     libelle: 'Refinancement Crédit Immobilier',
-    montantRefinance: 20000.00,
+    montantRefinance: 60000.00,
     tauxInteret: 10,
     dateRefinancement: '2025-03-09',
     dureeEnMois: 12,
     encoursRefinance: 0.00,
-    fraisDossier: 0,
-    conditions: '',
+    fraisDossier: 500,
+    conditions: 'Garantie hypothécaire requise',
     statut: 'ACTIF',
-    totalInterets: 2000,
+    totalInterets: 6000,
     ordreSaisie: 1,
     dateCreation: '2025-01-23T10:00:00.000Z',
     dateModification: '2025-01-23T10:00:00.000Z'
@@ -302,32 +289,16 @@ const initialRefinancements = [
   {
     id: '2',
     libelle: 'Refinancement Crédit Auto',
-    montantRefinance: 15000.00,
-    tauxInteret: 15,
-    dateRefinancement: '2025-03-09',
+    montantRefinance: 40000.00,
+    tauxInteret: 12,
+    dateRefinancement: '2025-03-15',
     dureeEnMois: 24,
     encoursRefinance: 0.00,
-    fraisDossier: 0,
-    conditions: '',
-    statut: 'SUSPENDU',
-    totalInterets: 4500,
-    ordreSaisie: 2,
-    dateCreation: '2025-01-23T10:00:00.000Z',
-    dateModification: '2025-01-23T10:00:00.000Z'
-  },
-  {
-    id: '3',
-    libelle: 'Refinancement Crédit Personnel',
-    montantRefinance: 20000.00,
-    tauxInteret: 5,
-    dateRefinancement: '2025-03-09',
-    dureeEnMois: 36,
-    encoursRefinance: 0.00,
-    fraisDossier: 0,
-    conditions: '',
+    fraisDossier: 300,
+    conditions: 'Véhicule en garantie',
     statut: 'ACTIF',
-    totalInterets: 3000,
-    ordreSaisie: 3,
+    totalInterets: 9600,
+    ordreSaisie: 2,
     dateCreation: '2025-01-23T10:00:00.000Z',
     dateModification: '2025-01-23T10:00:00.000Z'
   }

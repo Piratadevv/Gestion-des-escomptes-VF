@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import responsive utilities */
+@import './styles/responsive-utilities.css';
+
 /* Variables CSS personnalisées */
 :root {
   --color-primary-50: #eff6ff;
@@ -54,28 +57,130 @@ body.modal-open {
 .main-content {
   margin-left: 0;
   transition: margin-left 300ms ease-in-out;
+  padding: 1rem;
 }
 
-.main-content.sidebar-open {
-  margin-left: 16rem; /* 256px - sidebar width */
+@media (min-width: 1024px) {
+  .main-content.sidebar-open {
+    margin-left: 16rem; /* 256px - sidebar width */
+  }
+  
+  .main-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-content {
+    padding: 2rem;
+  }
 }
 
 /* Sidebar responsive improvements */
 .sidebar-overlay {
-  @apply fixed inset-0 z-40 bg-black bg-opacity-50 lg:hidden;
+  @apply fixed inset-0 z-30 bg-black bg-opacity-50 md:hidden;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease-out;
 }
 
 .sidebar {
-  @apply fixed top-16 left-0 z-40 w-64 bg-white border-r border-gray-200 transition-transform duration-300 ease-in-out transform;
-  height: calc(100vh - 4rem);
+  @apply fixed left-0 z-50 bg-white border-r border-gray-200 transition-all duration-300 ease-in-out transform;
+  top: 3.5rem; /* 56px for mobile header */
+  height: calc(100vh - 3.5rem);
+  width: 100vw; /* Full screen on mobile */
+  will-change: transform;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Small mobile devices */
+@media (min-width: 480px) {
+  .sidebar {
+    width: 85vw; /* 85% width on small tablets */
+    max-width: 320px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 640px) {
+  .sidebar {
+    top: 4rem; /* 64px for desktop header */
+    height: calc(100vh - 4rem);
+    width: 75vw;
+    max-width: 280px;
+  }
+}
+
+/* Large tablets */
+@media (min-width: 768px) {
+  .sidebar {
+    width: 320px; /* Fixed width for larger screens */
+  }
+  
+  .sidebar-overlay {
+    @apply hidden;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 280px; /* Slightly smaller on desktop */
+    @apply translate-x-0;
+  }
+  
+  .sidebar.closed {
+    @apply -translate-x-full;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1280px) {
+  .sidebar {
+    width: 320px; /* Larger width for big screens */
+  }
 }
 
 .sidebar.open {
   @apply translate-x-0;
+  animation: slideInLeft 0.3s ease-out;
 }
 
 .sidebar.closed {
   @apply -translate-x-full;
+  animation: slideOutLeft 0.3s ease-in;
+}
+
+/* Additional keyframes for sidebar animations */
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Touch feedback improvements */
+.touch-feedback {
+  @apply active:scale-95 active:bg-opacity-80 transition-transform duration-150;
+}
+
+/* Improved scrollbar for mobile */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 @layer components {
@@ -98,6 +203,23 @@ body.modal-open {
   
   .btn-icon {
     @apply inline-flex items-center justify-center p-2 border border-transparent rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200;
+  }
+  
+  /* Action buttons for CRUD operations */
+  .action-btn {
+    @apply inline-flex items-center justify-center p-2 rounded-banking border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 hover:shadow-md;
+  }
+  
+  .action-btn-edit {
+    @apply text-banking-900 bg-banking-50 border-banking-200 hover:text-white hover:bg-banking-900 hover:border-banking-900 focus:ring-banking-500;
+  }
+  
+  .action-btn-delete {
+    @apply text-risk-600 bg-risk-50 border-risk-200 hover:text-white hover:bg-risk-600 hover:border-risk-600 focus:ring-risk-500;
+  }
+  
+  .action-btn:hover svg {
+    @apply scale-110;
   }
   
   /* Champs de formulaire */
@@ -139,15 +261,28 @@ body.modal-open {
   }
   
   .card-header {
-    @apply px-4 py-5 sm:px-6 border-b border-gray-200;
+    @apply px-3 py-4 sm:px-4 sm:py-5 lg:px-6 border-b border-gray-200;
   }
   
   .card-body {
-    @apply px-4 py-5 sm:p-6;
+    @apply px-3 py-4 sm:px-4 sm:py-5 lg:p-6;
   }
   
   .card-footer {
-    @apply px-4 py-4 sm:px-6 border-t border-gray-200;
+    @apply px-3 py-3 sm:px-4 sm:py-4 lg:px-6 border-t border-gray-200;
+  }
+  
+  /* Responsive card grid */
+  .card-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  
+  .card-grid-2 {
+    @apply grid grid-cols-1 gap-4 md:grid-cols-2;
+  }
+  
+  .card-grid-3 {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
   }
   
   /* Tables */
@@ -160,7 +295,7 @@ body.modal-open {
   }
   
   .table-header-cell {
-    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+    @apply px-3 py-2 sm:px-6 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
   }
   
   .table-body {
@@ -172,7 +307,28 @@ body.modal-open {
   }
   
   .table-cell {
-    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+    @apply px-3 py-2 sm:px-6 sm:py-4 text-sm text-gray-900;
+  }
+  
+  /* Responsive table wrapper */
+  .table-responsive {
+    @apply overflow-x-auto -mx-4 sm:mx-0;
+  }
+  
+  .table-responsive .table {
+    @apply min-w-max sm:min-w-full;
+  }
+  
+  /* Mobile table adjustments */
+  @media (max-width: 640px) {
+    .table-cell {
+      @apply whitespace-normal;
+      min-width: 120px;
+    }
+    
+    .table-header-cell {
+      min-width: 120px;
+    }
   }
   
   /* Badges */
@@ -229,6 +385,68 @@ body.modal-open {
   /* Transitions */
   .transition-base {
     @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .transition-fast {
+    @apply transition-all duration-150 ease-in-out;
+  }
+  
+  .transition-slow {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Mobile-first responsive utilities */
+  .mobile-stack {
+    @apply flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3;
+  }
+  
+  .mobile-full {
+    @apply w-full sm:w-auto;
+  }
+  
+  .mobile-center {
+    @apply text-center sm:text-left;
+  }
+  
+  /* Touch-friendly interactive elements */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Responsive text sizes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl;
+  }
+  
+  /* Responsive spacing */
+  .space-responsive {
+    @apply space-y-4 sm:space-y-6 lg:space-y-8;
+  }
+  
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+  
+  /* Form responsive improvements */
+  .form-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  .form-actions {
+    @apply flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3 sm:justify-end;
   }
   
   /* Scrollbars personnalisées */

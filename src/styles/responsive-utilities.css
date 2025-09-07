@@ -1,0 +1,507 @@
+/* Responsive Utilities for Mobile-First Design */
+
+/* Touch-friendly interactions */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+}
+
+.touch-target-large {
+  @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
+}
+
+/* Mobile-first container patterns */
+.mobile-container {
+  @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+}
+
+.mobile-section {
+  @apply py-6 sm:py-8 lg:py-12;
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY SYSTEM ===== */
+
+/* Fluid typography with clamp() for smooth scaling */
+.text-fluid-xs {
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  line-height: 1.4;
+}
+
+.text-fluid-sm {
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  line-height: 1.5;
+}
+
+.text-fluid-base {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  line-height: 1.6;
+}
+
+.text-fluid-lg {
+  font-size: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.text-fluid-xl {
+  font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  line-height: 1.4;
+}
+
+.text-fluid-2xl {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  line-height: 1.3;
+}
+
+.text-fluid-3xl {
+  font-size: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+  line-height: 1.2;
+}
+
+/* Legacy responsive text sizes (maintained for compatibility) */
+.text-responsive-xs {
+  @apply text-xs sm:text-sm;
+}
+
+.text-responsive-sm {
+  @apply text-sm sm:text-base;
+}
+
+.text-responsive-base {
+  @apply text-base sm:text-lg;
+}
+
+.text-responsive-lg {
+  @apply text-lg sm:text-xl;
+}
+
+/* Heading typography system */
+.heading-primary {
+  @apply text-fluid-3xl font-bold text-trust-900 tracking-tight;
+}
+
+.heading-secondary {
+  @apply text-fluid-2xl font-semibold text-trust-800 tracking-tight;
+}
+
+.heading-tertiary {
+  @apply text-fluid-xl font-semibold text-trust-700;
+}
+
+.heading-quaternary {
+  @apply text-fluid-lg font-medium text-trust-700;
+}
+
+/* Body text variations */
+.body-large {
+  @apply text-fluid-lg text-trust-700 leading-relaxed;
+}
+
+.body-regular {
+  @apply text-fluid-base text-trust-600 leading-relaxed;
+}
+
+.body-small {
+  @apply text-fluid-sm text-trust-500 leading-normal;
+}
+
+.body-caption {
+  @apply text-fluid-xs text-trust-400 leading-normal;
+}
+
+/* Interactive text */
+.text-interactive {
+  @apply text-banking-900 hover:text-trust-900 transition-colors duration-200 cursor-pointer;
+}
+
+.text-interactive-muted {
+  @apply text-trust-500 hover:text-banking-900 transition-colors duration-200 cursor-pointer;
+}
+
+/* Status text colors */
+.text-success {
+  @apply text-banking-900;
+}
+
+.text-warning {
+  @apply text-alert-600;
+}
+
+.text-error {
+  @apply text-risk-600;
+}
+
+.text-info {
+  @apply text-banking-900;
+}
+
+/* Responsive line heights */
+.leading-responsive-tight {
+  @apply leading-tight sm:leading-snug;
+}
+
+.leading-responsive-normal {
+  @apply leading-normal sm:leading-relaxed;
+}
+
+.leading-responsive-relaxed {
+  @apply leading-relaxed sm:leading-loose;
+}
+
+/* Mobile-optimized reading experience */
+.text-mobile-optimized {
+  font-size: clamp(1rem, 4vw, 1.125rem);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* High contrast text for accessibility */
+.text-high-contrast {
+  @apply text-trust-900;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive font weights */
+.font-responsive-light {
+  @apply font-light sm:font-normal;
+}
+
+.font-responsive-normal {
+  @apply font-normal sm:font-medium;
+}
+
+.font-responsive-medium {
+  @apply font-medium sm:font-semibold;
+}
+
+.font-responsive-bold {
+    @apply font-semibold sm:font-bold;
+  }
+
+.text-responsive-xl {
+  @apply text-xl sm:text-2xl lg:text-3xl;
+}
+
+/* Mobile-first grid patterns */
+.grid-responsive-1-2 {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6;
+}
+
+.grid-responsive-1-2-3 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6;
+}
+
+.grid-responsive-1-3 {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6;
+}
+
+.grid-responsive-2-4 {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4;
+}
+
+/* Responsive spacing patterns */
+.space-responsive-x {
+  @apply space-x-2 sm:space-x-4 lg:space-x-6;
+}
+
+.space-responsive-y {
+  @apply space-y-3 sm:space-y-4 lg:space-y-6;
+}
+
+.gap-responsive {
+  @apply gap-3 sm:gap-4 lg:gap-6;
+}
+
+.padding-responsive {
+  @apply p-4 sm:p-6 lg:p-8;
+}
+
+.padding-responsive-x {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.padding-responsive-y {
+  @apply py-4 sm:py-6 lg:py-8;
+}
+
+.margin-responsive {
+  @apply m-4 sm:m-6 lg:m-8;
+}
+
+.margin-responsive-x {
+  @apply mx-4 sm:mx-6 lg:mx-8;
+}
+
+.margin-responsive-y {
+  @apply my-4 sm:my-6 lg:my-8;
+}
+
+/* Mobile-first flex patterns */
+.flex-responsive-col {
+  @apply flex flex-col sm:flex-row;
+}
+
+.flex-responsive-row {
+  @apply flex flex-row;
+}
+
+.flex-responsive-wrap {
+  @apply flex flex-wrap gap-2 sm:gap-4;
+}
+
+/* Mobile navigation patterns */
+.mobile-nav-item {
+  @apply block px-4 py-3 text-base font-medium text-gray-700 hover:text-banking-900 hover:bg-gray-50 transition-colors duration-200;
+}
+
+.mobile-nav-active {
+  @apply bg-banking-50 text-banking-700 border-r-4 border-banking-500;
+}
+
+/* Card responsive patterns */
+.card-responsive {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 hover:shadow-md transition-shadow duration-200;
+}
+
+.card-responsive-compact {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200 p-3 sm:p-4 hover:shadow-md transition-shadow duration-200;
+}
+
+/* Button responsive patterns */
+.btn-responsive {
+  @apply px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-medium rounded-lg transition-all duration-200;
+}
+
+.btn-responsive-small {
+  @apply px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-md transition-all duration-200;
+}
+
+.btn-responsive-large {
+  @apply px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium rounded-lg transition-all duration-200;
+}
+
+/* ===== FORM STYLES ===== */
+.form-container {
+  @apply max-w-full mx-auto p-4 sm:p-6 lg:p-8;
+}
+
+.form-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+.form-group-responsive {
+  @apply space-y-2 sm:space-y-3;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.label-responsive {
+  @apply block text-sm sm:text-base font-medium text-gray-700 mb-2 sm:mb-3 flex items-center;
+}
+
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm
+         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+         disabled:bg-gray-50 disabled:text-gray-500;
+}
+
+.input-field-responsive {
+  @apply w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base
+         border border-gray-300 rounded-md shadow-sm
+         bg-white transition-all duration-200
+         focus:outline-none focus:ring-2 focus:ring-banking-500 focus:border-banking-500
+         hover:border-gray-400
+         disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed
+         placeholder:text-gray-400;
+}
+
+.form-input-error {
+  @apply border-red-300 focus:ring-red-500 focus:border-red-500;
+}
+
+.form-error {
+  @apply text-sm text-red-600 mt-1;
+}
+
+.error-message-responsive {
+  @apply flex items-center text-xs sm:text-sm text-red-600 mt-2;
+}
+
+.form-help {
+  @apply text-sm text-gray-500 mt-1;
+}
+
+/* Form responsive patterns */
+.form-responsive {
+  @apply space-y-4 sm:space-y-6;
+}
+
+.input-responsive {
+  @apply w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-banking-500 focus:border-banking-500 transition-colors duration-200;
+}
+
+/* Table responsive patterns */
+.table-responsive {
+  @apply overflow-x-auto shadow-sm rounded-lg border border-gray-200;
+}
+
+.table-cell-responsive {
+  @apply px-3 py-3 sm:px-4 sm:py-4 lg:px-6 lg:py-4;
+}
+
+/* Mobile-first visibility patterns */
+.mobile-only {
+  @apply block md:hidden;
+}
+
+.desktop-only {
+  @apply hidden md:block;
+}
+
+.tablet-only {
+  @apply hidden md:block lg:hidden;
+}
+
+.touch-only {
+  @apply block desktop:hidden;
+}
+
+/* Safe area utilities for mobile devices */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-left {
+  padding-left: env(safe-area-inset-left);
+}
+
+.safe-area-right {
+  padding-right: env(safe-area-inset-right);
+}
+
+.safe-area-inset {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Mobile-first aspect ratios */
+.aspect-responsive-square {
+  @apply aspect-square;
+}
+
+.aspect-responsive-video {
+  @apply aspect-video;
+}
+
+.aspect-responsive-card {
+  @apply aspect-[4/3] sm:aspect-[3/2] lg:aspect-[16/9];
+}
+
+/* Responsive shadows */
+.shadow-responsive {
+  @apply shadow-sm sm:shadow-md lg:shadow-lg;
+}
+
+.shadow-responsive-hover {
+  @apply shadow-sm hover:shadow-md sm:shadow-md sm:hover:shadow-lg transition-shadow duration-200;
+}
+
+/* Mobile-first border radius */
+.rounded-responsive {
+  @apply rounded-lg sm:rounded-xl;
+}
+
+.rounded-responsive-small {
+  @apply rounded-md sm:rounded-lg;
+}
+
+/* Responsive z-index for mobile overlays */
+.z-mobile-overlay {
+  @apply z-40;
+}
+
+.z-mobile-modal {
+  @apply z-50;
+}
+
+.z-mobile-toast {
+  @apply z-50;
+}
+
+/* Mobile-first animation delays for staggered effects */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Responsive transform utilities */
+.transform-responsive {
+  @apply transform transition-transform duration-200;
+}
+
+.scale-responsive-hover {
+  @apply transform hover:scale-105 sm:hover:scale-110 transition-transform duration-200;
+}
+
+/* Mobile-first overflow patterns */
+.overflow-responsive {
+  @apply overflow-hidden sm:overflow-visible;
+}
+
+.overflow-scroll-touch {
+  @apply overflow-auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive line clamp utilities */
+.line-clamp-responsive-2 {
+  @apply line-clamp-2 sm:line-clamp-3;
+}
+
+.line-clamp-responsive-3 {
+  @apply line-clamp-3 sm:line-clamp-4;
+}
+
+/* Mobile-first focus styles */
+.focus-responsive {
+  @apply focus:outline-none focus:ring-2 focus:ring-banking-500 focus:ring-offset-2 sm:focus:ring-offset-4;
+}
+
+/* Responsive backdrop blur */
+.backdrop-responsive {
+  @apply backdrop-blur-sm sm:backdrop-blur-md;
+}
+
+/* Mobile-first transition patterns */
+.transition-responsive {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.transition-responsive-slow {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.transition-responsive-fast {
+  @apply transition-all duration-150 ease-in-out;
+}

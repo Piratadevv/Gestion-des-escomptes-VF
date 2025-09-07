@@ -162,10 +162,10 @@ const RefinancementsTable: React.FC = () => {
   return (
     <div className="p-6">
       {/* Header avec recherche */}
-      <div className="mb-6">
+      <div className="mb-8">
         <div className="bg-gradient-to-r from-white to-banking-50 rounded-banking shadow-banking border border-banking-200 p-6">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center space-x-3 mb-4 sm:mb-0">
+          <div className="mobile-stack">
+            <div className="flex items-center space-x-4">
               <div className="w-10 h-10 bg-banking-600 rounded-banking flex items-center justify-center shadow-banking-sm">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -180,16 +180,16 @@ const RefinancementsTable: React.FC = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="mobile-full">
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Rechercher par libellé ou statut..."
+                  placeholder="Rechercher..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-12 pr-4 py-3 border border-banking-300 rounded-banking focus:ring-2 focus:ring-banking-500 focus:border-banking-500 bg-white shadow-banking-sm transition-all duration-200 hover:border-banking-400 sm:text-sm font-medium"
+                  className="mobile-full pl-10 pr-4 py-3 border border-banking-300 rounded-banking focus:ring-2 focus:ring-banking-500 focus:border-banking-500 bg-white shadow-banking-sm transition-all duration-200 hover:border-banking-400 text-sm font-medium"
                 />
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <svg className="h-5 w-5 text-banking-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
@@ -202,14 +202,14 @@ const RefinancementsTable: React.FC = () => {
 
       {/* Table */}
       {filteredAndSortedRefinancements.length === 0 ? (
-        <div className="bg-white rounded-banking shadow-banking border border-neutral-200 p-12">
+        <div className="bg-white rounded-banking shadow-banking border border-neutral-200 p-10">
           <div className="text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-banking mx-auto mb-4 flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-banking mx-auto mb-6 flex items-center justify-center">
               <svg className="h-8 w-8 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-trust-900 mb-2">Aucun refinancement</h3>
+            <h3 className="text-lg font-semibold text-trust-900 mb-4">Aucun refinancement</h3>
             <p className="text-sm text-neutral-600 max-w-sm mx-auto">
               {searchTerm ? 'Aucun refinancement ne correspond à votre recherche. Essayez avec d\'autres termes.' : 'Commencez par créer votre premier refinancement pour suivre vos opérations financières.'}
             </p>
@@ -217,19 +217,19 @@ const RefinancementsTable: React.FC = () => {
         </div>
       ) : (
         <div className="bg-white rounded-banking shadow-banking border border-neutral-200 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-banking-200">
+          <div className="table-responsive">
+            <table className="table">
               <thead className="bg-gradient-to-r from-banking-50 to-trust-50">
               <tr>
                 <th 
-                  className="px-6 py-4 text-left text-xs font-semibold text-trust-700 uppercase tracking-wider cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
+                  className="table-header-cell cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
                   onClick={() => handleSort('libelle')}
                 >
                   <div className="flex items-center space-x-2">
-                    <svg className="w-4 h-4 text-banking-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                    </svg>
-                    <span>Libellé</span>
+                     <svg className="w-4 h-4 text-banking-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                     </svg>
+                     <span>Libellé</span>
                     <SortIcon field="libelle" />
                   </div>
                 </th>
@@ -246,19 +246,19 @@ const RefinancementsTable: React.FC = () => {
                   </div>
                 </th>
                 <th 
-                  className="px-6 py-4 text-left text-xs font-semibold text-trust-700 uppercase tracking-wider cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
+                  className="table-header-cell cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
                   onClick={() => handleSort('montantRefinance')}
                 >
                   <div className="flex items-center space-x-2">
-                    <svg className="w-4 h-4 text-banking-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                    </svg>
-                    <span>Montant</span>
+                     <svg className="w-4 h-4 text-banking-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                     </svg>
+                     <span>Montant</span>
                     <SortIcon field="montantRefinance" />
                   </div>
                 </th>
                 <th 
-                  className="px-6 py-4 text-left text-xs font-semibold text-trust-700 uppercase tracking-wider cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
+                  className="table-header-cell cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
                   onClick={() => handleSort('tauxInteret')}
                 >
                   <div className="flex items-center space-x-2">
@@ -270,7 +270,7 @@ const RefinancementsTable: React.FC = () => {
                   </div>
                 </th>
                 <th 
-                  className="px-6 py-4 text-left text-xs font-semibold text-trust-700 uppercase tracking-wider cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
+                  className="table-header-cell cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
                   onClick={() => handleSort('dateRefinancement')}
                 >
                   <div className="flex items-center space-x-2">
@@ -282,7 +282,7 @@ const RefinancementsTable: React.FC = () => {
                   </div>
                 </th>
                 <th 
-                  className="px-6 py-4 text-left text-xs font-semibold text-trust-700 uppercase tracking-wider cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
+                  className="table-header-cell cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
                   onClick={() => handleSort('encoursRefinance')}
                 >
                   <div className="flex items-center space-x-2">
@@ -294,18 +294,18 @@ const RefinancementsTable: React.FC = () => {
                   </div>
                 </th>
                 <th 
-                  className="px-6 py-4 text-left text-xs font-semibold text-trust-700 uppercase tracking-wider cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
+                  className="table-header-cell cursor-pointer hover:bg-banking-100 transition-colors duration-200 group"
                   onClick={() => handleSort('statut')}
                 >
                   <div className="flex items-center space-x-2">
-                    <svg className="w-4 h-4 text-banking-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>Statut</span>
+                     <svg className="w-4 h-4 text-banking-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                     </svg>
+                     <span>Statut</span>
                     <SortIcon field="statut" />
                   </div>
                 </th>
-                <th className="px-6 py-4 text-right text-xs font-semibold text-trust-700 uppercase tracking-wider">
+                <th className="table-header-cell">
                   <div className="flex items-center justify-end space-x-2">
                     <svg className="w-4 h-4 text-banking-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -318,52 +318,59 @@ const RefinancementsTable: React.FC = () => {
             <tbody className="bg-white divide-y divide-banking-100">
               {filteredAndSortedRefinancements.map((refinancement) => (
                 <tr key={refinancement.id || `refinancement-${Math.random()}`} className="hover:bg-gradient-to-r hover:from-banking-25 hover:to-trust-25 transition-all duration-200 group">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-trust-900">
+                  <td className="table-cell">
                     <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-banking-500 rounded-full"></div>
-                      <span>{refinancement.libelle}</span>
+                      <div className="w-2 h-2 bg-banking-500 rounded-full flex-shrink-0"></div>
+                      <span className="text-sm font-semibold text-trust-900 truncate">{refinancement.libelle}</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-trust-700 font-medium">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-banking bg-neutral-100 text-neutral-700 text-xs font-semibold">
-                      {refinancement.dureeEnMois} mois
+                  <td className="table-cell">
+                    <span className="inline-flex items-center px-4 py-2 rounded-banking bg-neutral-100 text-neutral-700 text-xs font-semibold">
+                      <span className="hidden sm:inline">{refinancement.dureeEnMois} mois</span>
+                      <span className="sm:hidden">{refinancement.dureeEnMois}m</span>
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-banking-800 font-bold">
-                    {formaterMontant(refinancement.montantRefinance)}
+                  <td className="table-cell text-right">
+                    <div className="text-sm text-banking-800 font-bold">
+                      {formaterMontant(refinancement.montantRefinance)}
+                    </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-trust-700 font-medium">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-banking bg-banking-100 text-banking-700 text-xs font-semibold">
+                  <td className="table-cell">
+                    <span className="inline-flex items-center px-4 py-2 rounded-banking bg-banking-100 text-banking-700 text-xs font-semibold">
                       {refinancement.tauxInteret}%
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-trust-700 font-medium">
-                    {new Date(refinancement.dateRefinancement).toLocaleDateString('fr-FR')}
+                  <td className="table-cell">
+                    <div className="text-sm text-trust-700 font-medium">
+                      {new Date(refinancement.dateRefinancement).toLocaleDateString('fr-FR')}
+                    </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-banking-800 font-bold">
-                    {formaterMontant(refinancement.encoursRefinance)}
+                  <td className="table-cell text-right">
+                    <div className="text-sm text-banking-800 font-bold">
+                      {formaterMontant(refinancement.encoursRefinance)}
+                    </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="table-cell">
                     {getStatusBadge(refinancement.statut)}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <div className="flex items-center justify-end space-x-3">
+                  <td className="table-cell text-right">
+                    <div className="flex items-center justify-end space-x-4">
                       <button
                         onClick={() => handleEdit(refinancement)}
-                        className="inline-flex items-center justify-center w-8 h-8 text-banking-600 hover:text-white hover:bg-banking-600 bg-banking-50 border border-banking-200 rounded-banking transition-all duration-200 hover:shadow-banking-sm group"
+                        className="touch-target inline-flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 text-banking-600 hover:text-white hover:bg-banking-600 bg-banking-50 border border-banking-200 rounded-banking transition-all duration-200 hover:shadow-banking-sm group"
                         title="Modifier le refinancement"
                       >
-                        <svg className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 sm:w-4 sm:h-4 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                         </svg>
                       </button>
                       <button
                         onClick={() => refinancement.id && handleDelete(refinancement.id)}
-                        className="inline-flex items-center justify-center w-8 h-8 text-risk-600 hover:text-white hover:bg-risk-600 bg-risk-50 border border-risk-200 rounded-banking transition-all duration-200 hover:shadow-banking-sm group disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="touch-target inline-flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 text-risk-600 hover:text-white hover:bg-risk-600 bg-risk-50 border border-risk-200 rounded-banking transition-all duration-200 hover:shadow-banking-sm group disabled:opacity-50 disabled:cursor-not-allowed"
                         title="Supprimer le refinancement"
                         disabled={!refinancement.id}
                       >
-                        <svg className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 sm:w-4 sm:h-4 transition-transform duration-200 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                         </svg>
                       </button>

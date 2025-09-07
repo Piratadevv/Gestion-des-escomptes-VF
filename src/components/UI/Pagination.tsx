@@ -64,7 +64,7 @@ const Pagination: React.FC<PaginationProps> = ({
   }
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between space-y-3 sm:space-y-0">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
       {/* Informations */}
       {showInfo && (
         <div className="text-sm text-gray-700">
@@ -94,7 +94,7 @@ const Pagination: React.FC<PaginationProps> = ({
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          <span className="ml-1 hidden sm:inline">Précédent</span>
+          <span className="ml-2 hidden sm:inline">Précédent</span>
         </button>
 
         {/* Numéros de page */}
@@ -151,7 +151,7 @@ const Pagination: React.FC<PaginationProps> = ({
           `}
           aria-label="Page suivante"
         >
-          <span className="mr-1 hidden sm:inline">Suivant</span>
+          <span className="mr-2 hidden sm:inline">Suivant</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>

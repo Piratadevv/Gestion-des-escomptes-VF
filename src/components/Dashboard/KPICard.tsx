@@ -25,7 +25,7 @@ const KPICard: React.FC<KPICardProps> = ({
   // Style bancaire professionnel pour toutes les cartes KPI
   const neutralClasses = {
     bg: 'bg-gradient-to-br from-banking-50 to-trust-50',
-    icon: 'text-banking-600',
+    icon: 'text-banking-900',
     border: 'border-trust-200',
     hover: 'hover:shadow-banking-md hover:border-banking-300',
     shadow: 'shadow-banking-sm'
@@ -34,7 +34,7 @@ const KPICard: React.FC<KPICardProps> = ({
   const getTrendClasses = (type: string) => {
     switch (type) {
       case 'positive':
-        return 'text-financial-600';
+        return 'text-banking-900';
       case 'negative':
         return 'text-risk-600';
       case 'neutral':
@@ -71,29 +71,29 @@ const KPICard: React.FC<KPICardProps> = ({
 
   const CardContent = () => (
     <div className={`
-      ${neutralClasses.bg} rounded-banking border ${neutralClasses.shadow} p-6 
-      transition-all duration-300 hover:scale-[1.02]
+      ${neutralClasses.bg} rounded-banking border shadow-sm p-6 
+      transition-all duration-300 hover:scale-[1.02] hover:shadow-lg
       ${onClick ? `cursor-pointer ${neutralClasses.hover}` : ''}
       ${neutralClasses.border}
     `}>
-      <div className="flex items-center justify-between">
-        <div className="flex-1">
-          <p className="text-sm font-semibold text-neutral-600 mb-2 uppercase tracking-wide">
+      <div className="flex items-start sm:items-center justify-between space-x-4">
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-semibold text-neutral-600 mb-2 uppercase tracking-wide truncate">
             {title}
           </p>
-          <p className="text-3xl font-bold text-banking-900 mb-3 font-banking">
+          <p className="text-lg font-bold text-banking-900 mb-4 font-banking break-all">
             {value}
           </p>
           
           {trend && (
-            <div className={`flex items-center text-sm ${getTrendClasses(trend.type)} bg-white/50 rounded-full px-3 py-1`}>
-              <span className="mr-1">
+            <div className={`flex items-center text-sm ${getTrendClasses(trend.type)} bg-white/50 rounded-full px-4 py-2`}>
+              <span className="mr-1 flex-shrink-0">
                 {getTrendIcon(trend.type)}
               </span>
               <span className="font-semibold">
                 {trend.value}
               </span>
-              <span className="ml-1 text-neutral-700">
+              <span className="ml-1 text-neutral-700 truncate">
                 {trend.label}
               </span>
             </div>

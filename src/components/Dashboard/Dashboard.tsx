@@ -110,22 +110,24 @@ const Dashboard: React.FC = () => {
     <div className="min-h-screen bg-neutral-50">
       {/* En-tête du dashboard */}
       <div className="bg-gradient-to-r from-trust-900 to-banking-800 shadow-banking border-b border-trust-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto p-6">
           <div className="py-8">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div className="mobile-stack sm:flex sm:items-center sm:justify-between">
               <div>
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className="w-10 h-10 bg-banking-600 rounded-banking flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center space-x-4 mb-2">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-banking-900 rounded-banking flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
                     </svg>
                   </div>
-                  <div>
-                    <h1 className="text-2xl font-bold text-white">
-                      Gestion des Escomptes Bancaires
+                  <div className="min-w-0 flex-1">
+                    <h1 className="text-lg font-bold text-white truncate">
+                      <span className="hidden sm:inline">Gestion des Escomptes Bancaires</span>
+                      <span className="sm:hidden">Gestion Escomptes</span>
                     </h1>
-                    <p className="text-banking-200 text-sm font-medium">
-                      Système de Gestion Financière
+                    <p className="text-banking-200 text-lg font-medium">
+                      <span className="hidden sm:inline">Système de Gestion Financière</span>
+                      <span className="sm:hidden">Gestion Financière</span>
                     </p>
                   </div>
                 </div>
@@ -142,11 +144,11 @@ const Dashboard: React.FC = () => {
                 </p>
               </div>
               
-              <div className="mt-6 sm:mt-0 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+              <div className="mt-4 sm:mt-0 mobile-stack sm:flex sm:space-x-3">
                 <button
                   onClick={handleRefresh}
                   disabled={refreshing}
-                  className="bg-trust-700 hover:bg-trust-600 text-white px-4 py-2.5 rounded-banking font-medium transition-all duration-200 flex items-center justify-center shadow-sm border border-trust-600 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="touch-target bg-trust-700 hover:bg-trust-600 text-white px-4 py-4 rounded-banking font-medium transition-all duration-200 flex items-center justify-center shadow-sm border border-trust-600 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed mobile-full sm:w-auto"
                 >
                   <svg 
                     className={`w-4 h-4 mr-2 ${refreshing ? 'animate-spin' : ''}`} 
@@ -156,30 +158,31 @@ const Dashboard: React.FC = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
-                  {refreshing ? 'Actualisation...' : 'Actualiser'}
+                  <span className="hidden sm:inline">{refreshing ? 'Actualisation...' : 'Actualiser'}</span>
+                  <span className="sm:hidden">{refreshing ? 'Sync...' : 'Sync'}</span>
                 </button>
                 
                 <button
                   onClick={handleConfiguration}
-                  className="bg-banking-600 hover:bg-banking-700 text-white px-4 py-2.5 rounded-banking font-medium transition-all duration-200 flex items-center justify-center shadow-sm hover:shadow-md"
+                  className="px-4 py-2 text-sm font-medium text-white bg-banking-900 border border-transparent rounded-md hover:bg-banking-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-banking-800"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  Configuration
+                  <span className="hidden sm:inline">Configuration</span>
+                  <span className="sm:hidden">Config</span>
                 </button>
-
-
                 
                 <button
                   onClick={handleNewEscompte}
-                  className="btn-primary flex items-center justify-center"
+                  className="px-4 py-2 text-sm font-medium text-white bg-banking-900 border border-transparent rounded-md hover:bg-banking-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-banking-800"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
-                  Nouvel Escompte
+                  <span className="hidden sm:inline">Nouvel Escompte</span>
+                  <span className="sm:hidden">Nouveau</span>
                 </button>
               </div>
             </div>
@@ -188,36 +191,37 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Contenu principal */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto p-6 py-8">
         {/* Header avec statistiques rapides */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <div className="bg-white rounded-banking shadow-banking border border-neutral-200 p-6">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+            <div className="mobile-stack lg:flex lg:items-center lg:justify-between">
               <div className="mb-4 lg:mb-0">
-                <h2 className="text-xl font-bold text-trust-900 mb-1">Tableau de Bord Financier</h2>
-                <p className="text-trust-600 text-sm">Vue d'ensemble de vos escomptes et refinancements</p>
+                <h2 className="text-lg font-bold text-trust-900 mb-1">Tableau de Bord Financier</h2>
+            <p className="text-trust-600 text-sm">Vue d'ensemble de vos escomptes et refinancements</p>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-banking-600">{escomptes.length}</div>
-                  <div className="text-xs text-trust-500 font-medium">Escomptes Actifs</div>
+              <div className="flex items-center justify-between sm:justify-center sm:space-x-4 overflow-x-auto">
+                <div className="text-center flex-shrink-0">
+                  <div className="text-lg font-bold text-banking-900">{escomptes.length}</div>
+                  <div className="text-xs text-trust-500 font-medium">Escomptes</div>
                 </div>
-                <div className="w-px h-8 bg-neutral-300"></div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-financial-600">{Math.round(utilisationPourcentage)}%</div>
-                  <div className="text-xs text-trust-500 font-medium">Taux d'Utilisation</div>
+                <div className="w-px h-8 bg-neutral-300 mx-2"></div>
+                <div className="text-center flex-shrink-0">
+                  <div className="text-fluid-xl font-bold text-banking-900">{Math.round(utilisationPourcentage)}%</div>
+                  <div className="body-caption text-trust-500 font-medium">Utilisation</div>
                 </div>
-                <div className="w-px h-8 bg-neutral-300"></div>
+                <div className="w-px h-8 bg-neutral-300 mx-2 hidden sm:block"></div>
                 <button
                   onClick={() => dispatch(openModal({ type: 'configuration', isOpen: true }))}
-                  className="bg-banking-600 hover:bg-banking-700 text-white px-4 py-2 rounded-banking font-medium transition-all duration-200 flex items-center space-x-2 shadow-sm hover:shadow-md"
+                  className="touch-target bg-banking-900 hover:bg-banking-800 text-white px-4 py-2 rounded-banking font-medium transition-all duration-200 flex items-center space-x-2 shadow-sm hover:shadow-md flex-shrink-0 ml-2 sm:ml-0"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>Configuration</span>
+                  <span className="hidden sm:inline">Configuration</span>
+                  <span className="sm:hidden">Config</span>
                 </button>
               </div>
             </div>
@@ -225,7 +229,7 @@ const Dashboard: React.FC = () => {
         </div>
 
         {/* KPI Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="card-grid mb-8">
           <KPICard
             title="Cumul Total"
             value={formaterMontant(cumulGlobal)}
@@ -370,7 +374,7 @@ const Dashboard: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <div className="flex items-center space-x-3 mb-3">
-                  <div className="w-8 h-8 bg-banking-600 rounded-banking flex items-center justify-center">
+                  <div className="w-8 h-8 bg-banking-900 rounded-banking flex items-center justify-center">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -385,8 +389,8 @@ const Dashboard: React.FC = () => {
                     onClick={() => setActiveTab('escomptes')}
                     className={`px-6 py-2.5 text-sm font-semibold rounded-l-banking transition-all duration-200 ${
                       activeTab === 'escomptes' 
-                        ? 'bg-banking-600 text-white shadow-sm border-r border-banking-500' 
-                        : 'bg-white text-trust-700 hover:bg-neutral-50 border-r border-neutral-300'
+                        ? 'bg-banking-900 text-white shadow-sm border-r border-banking-800' 
+                        : 'bg-white text-banking-900 hover:bg-banking-50 border-r border-neutral-300'
                     }`}
                     aria-pressed={activeTab === 'escomptes' }
                   >
@@ -402,8 +406,8 @@ const Dashboard: React.FC = () => {
                     onClick={() => setActiveTab('refinancements')}
                     className={`px-6 py-2.5 text-sm font-semibold rounded-r-banking transition-all duration-200 ${
                       activeTab === 'refinancements' 
-                        ? 'bg-banking-600 text-white shadow-sm' 
-                        : 'bg-white text-trust-700 hover:bg-neutral-50'
+                        ? 'bg-banking-900 text-white shadow-sm' 
+                        : 'bg-white text-banking-900 hover:bg-banking-50'
                     }`}
                     aria-pressed={activeTab === 'refinancements'}
                   >

@@ -1,7 +1,5 @@
 # Banking Management Design System
 
-## Overview
-This design system provides a comprehensive guide for creating a modern, professional, and trustworthy banking management application. The system emphasizes security, reliability, and user confidence through carefully chosen colors, typography, and UI patterns.
 
 ## Color Palette
 
@@ -91,10 +89,10 @@ This design system provides a comprehensive guide for creating a modern, profess
 ### Buttons
 ```css
 .btn-primary {
-  @apply bg-banking-600 hover:bg-banking-700 text-white;
+  @apply bg-banking-900 hover:bg-trust-900 text-white;
   @apply px-6 py-3 rounded-banking font-medium;
   @apply transition-colors duration-200;
-  @apply focus:outline-none focus:ring-2 focus:ring-banking-500 focus:ring-offset-2;
+  @apply focus:outline-none focus:ring-2 focus:ring-banking-800 focus:ring-offset-2;
 }
 
 .btn-secondary {
@@ -182,13 +180,13 @@ This design system provides a comprehensive guide for creating a modern, profess
 
 ### Financial Data Display
 - **Currency**: Right-aligned, consistent decimal places
-- **Positive Values**: `text-financial-600`
+- **Positive Values**: `text-banking-900`
 - **Negative Values**: `text-risk-600`
 - **Large Numbers**: Formatted with separators
 
 ### Security Indicators
-- **Secure Actions**: Lock icons, `text-banking-600`
-- **Verification**: Checkmark icons, `text-financial-600`
+- **Secure Actions**: Lock icons, `text-banking-900`
+- **Verification**: Checkmark icons, `text-banking-900`
 - **Warnings**: Alert icons, `text-alert-500`
 
 ### Status Indicators

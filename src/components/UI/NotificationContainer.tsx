@@ -66,30 +66,30 @@ const NotificationContainer: React.FC = () => {
   const getNotificationStyles = (type: Notification['type']) => {
     switch (type) {
       case 'success':
-        return 'bg-success-50 border-success-200 text-success-800';
+        return 'bg-gray-800 border-success-400 text-white';
       case 'error':
-        return 'bg-danger-50 border-danger-200 text-danger-800';
+        return 'bg-gray-800 border-danger-400 text-white';
       case 'warning':
-        return 'bg-warning-50 border-warning-200 text-warning-800';
+        return 'bg-gray-800 border-warning-400 text-white';
       case 'info':
-        return 'bg-blue-50 border-blue-200 text-blue-800';
+        return 'bg-gray-800 border-blue-400 text-white';
       default:
-        return 'bg-gray-50 border-gray-200 text-gray-800';
+        return 'bg-gray-800 border-gray-400 text-white';
     }
   };
 
   const getIconStyles = (type: Notification['type']) => {
     switch (type) {
       case 'success':
-        return 'text-success-600';
+        return 'text-success-400';
       case 'error':
-        return 'text-danger-600';
+        return 'text-danger-400';
       case 'warning':
-        return 'text-warning-600';
+        return 'text-warning-400';
       case 'info':
-        return 'text-blue-600';
+        return 'text-blue-400';
       default:
-        return 'text-gray-600';
+        return 'text-gray-400';
     }
   };
 
@@ -148,7 +148,7 @@ const NotificationContainer: React.FC = () => {
             {/* Bouton fermer */}
             <button
               onClick={() => handleClose(notification.id)}
-              className="flex-shrink-0 ml-4 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-current rounded"
+              className="flex-shrink-0 ml-4 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-current rounded"
               aria-label="Fermer la notification"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">

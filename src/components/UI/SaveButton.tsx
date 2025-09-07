@@ -91,7 +91,7 @@ const SaveButton: React.FC<SaveButtonProps> = ({
     const baseClasses = 'inline-flex items-center justify-center font-medium rounded-banking focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-banking-sm hover:shadow-banking';
     
     const variantClasses = {
-      primary: 'bg-banking-600 hover:bg-banking-700 text-white focus:ring-banking-500 border border-banking-600 hover:border-banking-700',
+      primary: 'bg-banking-900 hover:bg-trust-900 text-white focus:ring-banking-800 border border-banking-900 hover:border-trust-900',
       secondary: 'bg-trust-100 hover:bg-trust-200 text-trust-800 focus:ring-trust-500 border border-trust-300 hover:border-trust-400'
     };
     

@@ -7,6 +7,7 @@ import RefinancementsPage from './components/Pages/RefinancementsPage';
 import LogsPage from './components/Pages/LogsPage';
 import Header from './components/Layout/Header';
 import Sidebar from './components/Layout/Sidebar';
+import EdgeSwipeDetector from './components/Layout/EdgeSwipeDetector';
 import NotificationContainer from './components/UI/NotificationContainer';
 import ModalContainer from './components/UI/ModalContainer';
 import LoadingOverlay from './components/UI/LoadingOverlay';
@@ -57,24 +58,33 @@ function AppContent(): JSX.Element {
           {sidebarOpen && (
             <div
               className="sidebar-overlay"
-              onClick={() => dispatch(setSidebarOpen(false))}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Overlay clicked - closing sidebar');
+                dispatch(setSidebarOpen(false));
+              }}
+              style={{ zIndex: 30, pointerEvents: 'auto' }}
             />
           )}
           
           {/* Contenu principal */}
-          <main className={`main-content flex-1 pt-16 ${sidebarOpen ? 'sidebar-open' : ''}`}>
-            <div className="container mx-auto px-4 py-6">
-              <Routes>
-                <Route path="/" element={<Navigate to="/escomptes" replace />} />
-                <Route path="/escomptes" element={<EscomptesPage />} />
-                <Route path="/refinancements" element={<RefinancementsPage />} />
-                <Route path="/logs" element={<LogsPage />} />
-              </Routes>
+          <main className={`main-content flex-1 pt-14 sm:pt-16 md:pt-18 transition-all duration-300 ${sidebarOpen ? 'sidebar-open' : ''}`}>
+            <div className="container mx-auto px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-3 sm:py-4 md:py-6 lg:py-8">
+              <div className="max-w-full overflow-hidden">
+                <Routes>
+                  <Route path="/" element={<Navigate to="/escomptes" replace />} />
+                  <Route path="/escomptes" element={<EscomptesPage />} />
+                  <Route path="/refinancements" element={<RefinancementsPage />} />
+                  <Route path="/logs" element={<LogsPage />} />
+                </Routes>
+              </div>
             </div>
           </main>
         </div>
         
         {/* Composants overlay */}
+        <EdgeSwipeDetector />
         <NotificationContainer />
         <ModalContainer />
         <LoadingOverlay isLoading={!!isLoading} />

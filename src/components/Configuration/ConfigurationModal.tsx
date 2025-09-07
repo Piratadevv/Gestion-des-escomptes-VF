@@ -138,30 +138,40 @@ const ConfigurationModal: React.FC<ConfigurationModalProps> = ({ isOpen, onClose
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Configuration financière */}
         <div className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-banking border border-slate-200/50">
-          <h3 className="text-lg font-semibold bg-gradient-to-r from-trust-900 to-trust-700 bg-clip-text text-transparent mb-4 flex items-center">
-            <svg className="w-5 h-5 text-banking-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <h3 className="text-base sm:text-lg font-semibold bg-gradient-to-r from-trust-900 to-trust-700 bg-clip-text text-transparent mb-3 sm:mb-4 flex items-center">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-banking-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
             </svg>
             Configuration financière
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-trust-700 mb-2">Autorisation bancaire (DH)</label>
-              <input
-                type="number"
-                min="0"
-                step="0.01"
-                value={formData.autorisationBancaire}
-                onChange={(e) => handleInputChange('autorisationBancaire', parseFloat(e.target.value) || 0)}
-                className={`w-full px-4 py-3 border rounded-banking transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-banking-500 focus:border-banking-500 bg-white shadow-banking-sm ${
-                  errors.autorisationBancaire 
-                    ? 'border-risk-500 focus:ring-risk-500 focus:border-risk-500' 
-                    : 'border-slate-300 hover:border-slate-400'
-                }`}
-                placeholder="0.00"
-              />
+            <div className="form-group-responsive">
+              <label className="label-responsive">
+                <svg className="w-4 h-4 inline mr-2 text-banking-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2" />
+                </svg>
+                Autorisation bancaire (DH) *
+              </label>
+              <div className="relative">
+                <input
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  value={formData.autorisationBancaire}
+                  onChange={(e) => handleInputChange('autorisationBancaire', parseFloat(e.target.value) || 0)}
+                  className={`input-field-responsive touch-target-large pr-12 ${
+                    errors.autorisationBancaire 
+                      ? 'border-risk-500 focus:ring-risk-500 focus:border-risk-500' 
+                      : ''
+                  }`}
+                  placeholder="0.00"
+                />
+                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm sm:text-base font-medium">
+                  DH
+                </span>
+              </div>
               {errors.autorisationBancaire && (
-                <p className="text-sm text-risk-600 mt-2 flex items-center">
+                <p className="error-message-responsive">
                   <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01" />
                   </svg>
@@ -202,12 +212,12 @@ const ConfigurationModal: React.FC<ConfigurationModalProps> = ({ isOpen, onClose
         )}
 
         {/* Actions */}
-        <div className="flex justify-between pt-6 border-t border-gradient-to-r from-slate-200 to-slate-300/50 bg-gradient-to-r from-slate-50/30 to-white">
+        <div className="flex flex-col sm:flex-row justify-between gap-4 pt-6 border-t border-gradient-to-r from-slate-200 to-slate-300/50 bg-gradient-to-r from-slate-50/30 to-white">
           <button
             type="button"
             onClick={handleReset}
             disabled={loading || !hasChanges}
-            className="px-4 py-2 text-sm font-medium text-neutral-700 bg-white border border-neutral-300 rounded-banking hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-banking-sm hover:shadow-banking"
+            className="touch-target-large order-3 sm:order-1 px-4 py-2 text-sm font-medium text-neutral-700 bg-white border border-neutral-300 rounded-banking hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-banking-sm flex items-center justify-center"
           >
             <svg className="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -215,20 +225,11 @@ const ConfigurationModal: React.FC<ConfigurationModalProps> = ({ isOpen, onClose
             Réinitialiser
           </button>
           
-          <div className="flex space-x-3">
-            <button
-              type="button"
-              onClick={onClose}
-              disabled={loading}
-              className="px-4 py-2 text-sm font-medium text-neutral-700 bg-white border border-neutral-300 rounded-banking hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-banking-sm hover:shadow-banking"
-            >
-              Annuler
-            </button>
-            
-            <button
-              type="submit"
+          <div className="flex flex-col sm:flex-row gap-4 order-1 sm:order-2">
+             <button
+               type="submit"
               disabled={loading || isValidating || !hasChanges}
-              className="px-6 py-2 text-sm font-medium text-white bg-gradient-to-r from-banking-600 to-banking-700 border border-transparent rounded-banking hover:from-banking-700 hover:to-banking-800 focus:outline-none focus:ring-2 focus:ring-banking-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-banking hover:shadow-banking-md flex items-center"
+              className="touch-target-large order-2 sm:order-2 px-6 py-2 text-sm font-medium text-white bg-gradient-to-r from-banking-600 to-banking-700 border border-transparent rounded-banking hover:from-banking-700 hover:to-banking-800 focus:outline-none focus:ring-2 focus:ring-banking-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-banking hover:shadow-banking-md flex items-center justify-center"
             >
               {(loading || isValidating) && <LoadingSpinner size="sm" className="mr-2" />}
               {loading ? (
@@ -253,6 +254,14 @@ const ConfigurationModal: React.FC<ConfigurationModalProps> = ({ isOpen, onClose
                   Sauvegarder
                 </>
               )}
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              disabled={loading}
+              className="touch-target-large order-1 sm:order-1 px-4 py-2 text-sm font-medium text-neutral-700 bg-white border border-neutral-300 rounded-banking hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-banking-sm flex items-center justify-center"
+            >
+              Annuler
             </button>
           </div>
         </div>

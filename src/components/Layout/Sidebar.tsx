@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { selectSidebarOpen, setSidebarOpen } from '../../store/slices/uiSlice';
@@ -17,6 +17,13 @@ const Sidebar: React.FC = () => {
   const encoursRestant = useAppSelector(selectEncoursRestantGlobal);
   const autorisationBancaire = useAppSelector(selectAutorisationBancaire);
   const pourcentageUtilisationGlobal = useAppSelector(selectPourcentageUtilisationGlobal);
+  
+  // Touch and swipe gesture state
+  const sidebarRef = useRef<HTMLElement>(null);
+  const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
+  const [touchEnd, setTouchEnd] = useState<{ x: number; y: number } | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
 
   const handleCloseSidebar = () => {
     dispatch(setSidebarOpen(false));
@@ -29,7 +36,109 @@ const Sidebar: React.FC = () => {
     }
   };
 
+  // Swipe gesture handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    if (!touch) return;
+    
+    setTouchStart({ x: touch.clientX, y: touch.clientY });
+    setTouchEnd(null);
+    setIsDragging(false);
+    setDragOffset(0);
+  };
 
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!touchStart) return;
+    
+    const touch = e.touches[0];
+    if (!touch) return;
+    
+    const currentTouch = { x: touch.clientX, y: touch.clientY };
+    setTouchEnd(currentTouch);
+    
+    const deltaX = currentTouch.x - touchStart.x;
+    const deltaY = Math.abs(currentTouch.y - touchStart.y);
+    
+    // Only handle horizontal swipes (ignore vertical scrolling)
+    if (Math.abs(deltaX) > deltaY && Math.abs(deltaX) > 10) {
+      setIsDragging(true);
+      
+      // For closing: only allow left swipe when sidebar is open
+      if (sidebarOpen && deltaX < 0) {
+        setDragOffset(Math.max(deltaX, -280)); // Limit to sidebar width
+        e.preventDefault(); // Prevent scrolling
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      setIsDragging(false);
+      setDragOffset(0);
+      return;
+    }
+    
+    const deltaX = touchEnd.x - touchStart.x;
+    const deltaY = Math.abs(touchEnd.y - touchStart.y);
+    const minSwipeDistance = 50;
+    
+    // Only process horizontal swipes
+    if (Math.abs(deltaX) > deltaY && Math.abs(deltaX) > minSwipeDistance) {
+      // Swipe left to close (when sidebar is open)
+      if (deltaX < -minSwipeDistance && sidebarOpen) {
+        handleCloseSidebar();
+      }
+      // Swipe right to open (when sidebar is closed) - handled by overlay or edge swipe
+      else if (deltaX > minSwipeDistance && !sidebarOpen && touchStart.x < 20) {
+        dispatch(setSidebarOpen(true));
+      }
+    }
+    
+    // Reset state
+    setTouchStart(null);
+    setTouchEnd(null);
+    setIsDragging(false);
+    setDragOffset(0);
+  };
+
+  // Handle escape key to close sidebar
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && sidebarOpen) {
+        handleCloseSidebar();
+      }
+    };
+
+    if (sidebarOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      // Prevent body scroll when sidebar is open on mobile
+      if (window.innerWidth < 768) {
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [sidebarOpen]);
+
+  // Handle click outside to close sidebar on mobile
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(e.target as Node) && sidebarOpen && window.innerWidth < 768) {
+        handleCloseSidebar();
+      }
+    };
+
+    if (sidebarOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [sidebarOpen]);
 
   const menuItems = [
     {
@@ -66,51 +175,77 @@ const Sidebar: React.FC = () => {
 
   return (
     <>
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div 
+          className="sidebar-overlay md:hidden" 
+          onClick={handleCloseSidebar}
+          aria-hidden="true"
+        />
+      )}
+      
       {/* Sidebar */}
       <aside
-        className={`sidebar ${sidebarOpen ? 'open' : 'closed'} overflow-y-auto scrollbar-thin bg-trust-900 border-r border-trust-800`}
+        ref={sidebarRef}
+        className={`sidebar ${sidebarOpen ? 'open' : 'closed'} overflow-y-auto scrollbar-thin bg-trust-900 border-r border-trust-800 transform-responsive`}
+        style={{ 
+          zIndex: 50,
+          transform: isDragging ? `translateX(${dragOffset}px)` : undefined,
+          transition: isDragging ? 'none' : 'transform 0.3s ease-in-out'
+        }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        role="navigation"
+        aria-label="Navigation principale"
       >
         <div className="flex flex-col h-full">
           {/* Banking Brand Section */}
           <div className="p-6 border-b border-trust-800">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-banking-600 rounded-banking flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <div className="flex items-center space-x-4">
+              
+               
+              </div>
+              
+              {/* Close button for mobile */}
+              <button
+                onClick={handleCloseSidebar}
+                className="md:hidden touch-target p-2 rounded-banking text-trust-400 hover:text-white hover:bg-trust-800 focus:outline-none focus:ring-2 focus:ring-banking-500 focus:ring-offset-2 focus:ring-offset-trust-900 transition-all duration-200"
+                aria-label="Fermer le menu"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
-              </div>
-              <div>
-                <h2 className="text-sm font-semibold text-white">Gestion Bancaire</h2>
-                <p className="text-xs text-trust-400">Système Financier</p>
-              </div>
+              </button>
             </div>
           </div>
 
           {/* Résumé financier */}
-          <div className="p-4 bg-trust-800/50 border-b border-trust-700">
-            <div className="flex items-center space-x-2 mb-3">
-              <svg className="w-4 h-4 text-banking-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="p-6 bg-gray-300 border-b ">
+            <div className="flex items-center space-x-2 mb-2 sm:mb-3">
+              <svg className="w-3 h-3 sm:w-4 sm:h-4 text-banking-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
-              <h3 className="text-sm font-semibold text-white">
+              <h3 className="text-sm font-semibold text-gray-900">
                 Résumé Financier
               </h3>
             </div>
             
-            <div className="space-y-3">
-              <div className="bg-trust-700/50 rounded-banking p-3">
+            <div className="space-y-4">
+              <div className="bg-white rounded-banking p-4 shadow-sm">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-xs text-trust-300 font-medium">Cumul Total</span>
-                  <span className="text-sm font-semibold text-white">
+                  <span className="text-sm text-gray-700 font-medium">Cumul Total</span>
+                <span className="text-sm font-semibold text-gray-900">
                     {formaterMontant(cumulTotal)}
                   </span>
                 </div>
               </div>
               
-              <div className="bg-trust-700/50 rounded-banking p-3">
+              <div className="bg-white rounded-banking p-4 shadow-sm">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-xs text-trust-300 font-medium">Encours Restant</span>
-                  <span className={`text-sm font-semibold ${
+                  <span className="text-sm text-gray-700 font-medium">Encours Restant</span>
+                <span className={`text-sm font-semibold ${
                     encoursRestant < 0 ? 'text-risk-400' : 'text-financial-400'
                   }`}>
                     {formaterMontant(encoursRestant)}
@@ -118,10 +253,10 @@ const Sidebar: React.FC = () => {
                 </div>
               </div>
               
-              <div className="bg-trust-700/50 rounded-banking p-3">
+              <div className="bg-white rounded-banking p-4 shadow-sm">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-xs text-trust-300 font-medium">Autorisation</span>
-                  <span className="text-sm font-semibold text-banking-300">
+                  <span className="text-sm text-gray-700 font-medium">Autorisation</span>
+                <span className="text-sm font-semibold text-banking-300">
                     {formaterMontant(autorisationBancaire)}
                   </span>
                 </div>
@@ -129,15 +264,15 @@ const Sidebar: React.FC = () => {
             </div>
             
             {/* Barre de progression */}
-            <div className="mt-4 bg-trust-700/50 rounded-banking p-3">
+            <div className="mt-4 bg-white rounded-banking p-4 shadow-sm">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-xs text-trust-300 font-medium">Taux d'Utilisation</span>
-                <span className="text-xs font-semibold text-white">
+                <span className="body-caption text-gray-700 font-medium">Taux d'Utilisation</span>
+                <span className="body-caption font-semibold text-gray-900">
                   {Math.max(0, Math.round(pourcentageUtilisationGlobal))}%
                 </span>
               </div>
               
-              <div className="w-full bg-trust-600 rounded-full h-2.5">
+              <div className="w-full bg-gray-400 rounded-full h-2.5">
                 <div
                   className={`h-2.5 rounded-full transition-all duration-500 ${
                     pourcentageUtilisationGlobal >= 100
@@ -155,7 +290,7 @@ const Sidebar: React.FC = () => {
                 />
               </div>
               
-              <div className="flex justify-between text-xs text-trust-400 mt-1">
+              <div className="flex justify-between text-sm text-trust-400 mt-2">
                 <span>0%</span>
                 <span>50%</span>
                 <span>100%</span>
@@ -164,25 +299,26 @@ const Sidebar: React.FC = () => {
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 p-4">
-            <div className="mb-4">
-              <h4 className="text-xs font-semibold text-trust-400 uppercase tracking-wider mb-3">
+          <nav className="flex-1 p-6">
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-trust-400 uppercase tracking-wider mb-4">
                 Navigation
               </h4>
             </div>
-            <ul className="space-y-1">
+            <ul className="space-y-2">
               {menuItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <li key={item.path}>
                     <button
                       onClick={() => handleNavigation(item.path)}
-                      className={`w-full flex items-center space-x-3 px-4 py-3 rounded-banking text-left transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-banking-500 focus:ring-offset-2 focus:ring-offset-trust-900 group ${
+                      className={`touch-target-large w-full flex items-center space-x-3 sm:space-x-3 md:space-x-2 px-4 sm:px-5 md:px-4 py-3.5 sm:py-3 md:py-2.5 rounded-banking text-left transition-all duration-200 focus-responsive active:scale-95 active:bg-opacity-80 group ${
                         isActive
-                          ? 'bg-banking-600 text-white shadow-banking border-l-4 border-banking-400'
-                          : 'text-trust-300 hover:bg-trust-800 hover:text-white'
+                          ? 'bg-banking-600 text-white shadow-banking border-l-4 border-banking-400 animate-slide-in-right'
+                          : 'text-trust-300 hover:bg-trust-800 hover:text-white hover:scale-102 transform-responsive'
                       }`}
                       aria-label={`Naviguer vers ${item.label}`}
+                      aria-current={isActive ? 'page' : undefined}
                     >
                       <span className={`transition-colors duration-200 ${
                         isActive 
@@ -193,7 +329,7 @@ const Sidebar: React.FC = () => {
                       </span>
                       <div className="flex-1">
                         <div className="font-semibold text-sm">{item.label}</div>
-                        <div className={`text-xs ${
+              <div className={`text-sm ${
                           isActive 
                             ? 'text-banking-200' 
                             : 'text-trust-500 group-hover:text-trust-300'
@@ -202,7 +338,7 @@ const Sidebar: React.FC = () => {
                         </div>
                       </div>
                       {isActive && (
-                        <div className="w-2 h-2 bg-banking-300 rounded-full animate-pulse-subtle" />
+                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-banking-300 rounded-full animate-pulse-subtle" />
                       )}
                     </button>
                   </li>
@@ -214,18 +350,18 @@ const Sidebar: React.FC = () => {
 
 
           {/* Informations système */}
-          <div className="p-4 bg-trust-800/50 border-t border-trust-700">
-            <div className="flex items-center space-x-2 mb-3">
-              <div className="w-6 h-6 bg-banking-600/20 rounded-banking flex items-center justify-center">
-                <svg className="w-3 h-3 text-banking-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="p-4 bg-gray-300 border-t border-gray-400">
+            <div className="flex items-center space-x-2 mb-2 sm:mb-3">
+              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-banking-600/20 rounded-banking flex items-center justify-center">
+                <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-banking-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div className="text-xs text-trust-300 space-y-1">
-                <div className="font-semibold">Système Bancaire v2.0.0</div>
-                <div className="text-trust-400">© 2025 Gestion Financière</div>
+              <div className="text-sm text-gray-700 space-y-2">
+                <div className="font-semibold text-gray-900">Système Bancaire v2.0</div>
+                <div className="text-gray-600">© 2025 Gestion Financière</div>
                 <div className="flex items-center space-x-1">
-                  <div className="w-2 h-2 bg-financial-500 rounded-full animate-pulse-subtle" />
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-financial-500 rounded-full animate-pulse-subtle" />
                   <span className="text-financial-400 font-medium">Système Opérationnel</span>
                 </div>
               </div>

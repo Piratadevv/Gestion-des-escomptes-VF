@@ -118,11 +118,11 @@ const SearchFilters: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Barre de recherche principale */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="mobile-stack">
         <div className="flex-1">
           <div className="relative group">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <svg className="h-5 w-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
@@ -131,26 +131,27 @@ const SearchFilters: React.FC = () => {
               placeholder="Rechercher par libellé..."
               value={(localFilters as any).recherche}
               onChange={(e) => handleFilterChange('recherche', e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md"
+              className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md text-sm touch-target"
             />
           </div>
         </div>
         
-        <div className="flex space-x-3">
+        <div className="mobile-stack sm:flex-row sm:space-y-0 sm:space-x-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`px-6 py-3 rounded-xl font-medium text-sm transition-all duration-200 flex items-center shadow-sm hover:shadow-md ${
+            className={`mobile-full sm:w-auto px-6 py-4 rounded-xl font-medium text-sm transition-all duration-200 flex items-center justify-center shadow-sm hover:shadow-md touch-target ${
               hasActiveFilters 
                 ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 text-blue-700 hover:from-blue-100 hover:to-indigo-100' 
                 : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300'
             }`}
           >
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
             </svg>
-            Filtres avancés
+            <span className="sm:hidden">Filtres</span>
+            <span className="hidden sm:inline">Filtres avancés</span>
             {hasActiveFilters && (
-              <span className="ml-2 bg-blue-600 text-white text-xs rounded-full px-2.5 py-1 font-semibold shadow-sm">
+              <span className="ml-1 sm:ml-2 bg-blue-600 text-white text-xs rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 font-semibold shadow-sm">
                 {Object.values(localFilters as any).filter(v => v !== '').length}
               </span>
             )}
@@ -159,7 +160,7 @@ const SearchFilters: React.FC = () => {
           {hasActiveFilters && (
             <button
               onClick={handleClearFilters}
-              className="px-6 py-3 rounded-xl font-medium text-sm bg-white border border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300 hover:text-red-700 transition-all duration-200 flex items-center shadow-sm hover:shadow-md"
+              className="mobile-full sm:w-auto px-6 py-4 rounded-xl font-medium text-sm bg-white border border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300 hover:text-red-700 transition-all duration-200 flex items-center justify-center shadow-sm hover:shadow-md touch-target"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -171,41 +172,43 @@ const SearchFilters: React.FC = () => {
       </div>
 
       {/* Filtres rapides */}
-      <div className="flex flex-wrap items-center gap-3">
-        <span className="text-sm text-slate-600 font-semibold">Filtres rapides :</span>
-        <button
-          onClick={() => handleQuickFilter('today')}
-          className="text-sm bg-gradient-to-r from-slate-50 to-slate-100 hover:from-blue-50 hover:to-indigo-50 text-slate-700 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 border border-slate-200 hover:border-blue-200 shadow-sm hover:shadow-md font-medium"
-        >
-          Aujourd'hui
-        </button>
-        <button
-          onClick={() => handleQuickFilter('thisWeek')}
-          className="text-sm bg-gradient-to-r from-slate-50 to-slate-100 hover:from-blue-50 hover:to-indigo-50 text-slate-700 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 border border-slate-200 hover:border-blue-200 shadow-sm hover:shadow-md font-medium"
-        >
-          Cette semaine
-        </button>
-        <button
-          onClick={() => handleQuickFilter('thisMonth')}
-          className="text-sm bg-gradient-to-r from-slate-50 to-slate-100 hover:from-blue-50 hover:to-indigo-50 text-slate-700 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 border border-slate-200 hover:border-blue-200 shadow-sm hover:shadow-md font-medium"
-        >
-          Ce mois
-        </button>
-        <button
-          onClick={() => handleQuickFilter('lastMonth')}
-          className="text-sm bg-gradient-to-r from-slate-50 to-slate-100 hover:from-blue-50 hover:to-indigo-50 text-slate-700 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 border border-slate-200 hover:border-blue-200 shadow-sm hover:shadow-md font-medium"
-        >
-          Mois dernier
-        </button>
+      <div className="space-y-4">
+        <span className="block text-sm text-slate-600 font-semibold mobile-center">Filtres rapides :</span>
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-4">
+          <button
+            onClick={() => handleQuickFilter('today')}
+            className="text-sm bg-gradient-to-r from-slate-50 to-slate-100 hover:from-blue-50 hover:to-indigo-50 text-slate-700 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 border border-slate-200 hover:border-blue-200 shadow-sm hover:shadow-md font-medium touch-target"
+          >
+            Aujourd'hui
+          </button>
+          <button
+            onClick={() => handleQuickFilter('thisWeek')}
+            className="text-sm bg-gradient-to-r from-slate-50 to-slate-100 hover:from-blue-50 hover:to-indigo-50 text-slate-700 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 border border-slate-200 hover:border-blue-200 shadow-sm hover:shadow-md font-medium touch-target"
+          >
+            Cette semaine
+          </button>
+          <button
+            onClick={() => handleQuickFilter('thisMonth')}
+            className="text-sm bg-gradient-to-r from-slate-50 to-slate-100 hover:from-blue-50 hover:to-indigo-50 text-slate-700 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 border border-slate-200 hover:border-blue-200 shadow-sm hover:shadow-md font-medium touch-target"
+          >
+            Ce mois
+          </button>
+          <button
+            onClick={() => handleQuickFilter('lastMonth')}
+            className="text-sm bg-gradient-to-r from-slate-50 to-slate-100 hover:from-blue-50 hover:to-indigo-50 text-slate-700 hover:text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 border border-slate-200 hover:border-blue-200 shadow-sm hover:shadow-md font-medium touch-target"
+          >
+            Mois dernier
+          </button>
+        </div>
       </div>
 
       {/* Filtres avancés */}
       {isExpanded && (
         <div className="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-2xl p-6 space-y-6 border border-slate-200 shadow-lg backdrop-blur-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="form-grid">
             {/* Filtre par libellé */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="label text-sm">
                 Libellé spécifique
               </label>
               <input
@@ -213,39 +216,39 @@ const SearchFilters: React.FC = () => {
                 placeholder="Filtrer par libellé exact"
                 value={(localFilters as any).libelle}
                 onChange={(e) => handleFilterChange('libelle', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md"
+                className="input-field px-4 py-4 rounded-xl text-sm touch-target"
               />
             </div>
 
             {/* Filtre par date de début */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="label text-sm">
                 Date de début
               </label>
               <input
                 type="date"
                 value={(localFilters as any).dateDebut}
                 onChange={(e) => handleFilterChange('dateDebut', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md"
+                className="input-field px-4 py-4 rounded-xl text-sm touch-target"
               />
             </div>
 
             {/* Filtre par date de fin */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="label text-sm">
                 Date de fin
               </label>
               <input
                 type="date"
                 value={(localFilters as any).dateFin}
                 onChange={(e) => handleFilterChange('dateFin', e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md"
+                className="input-field px-4 py-4 rounded-xl text-sm touch-target"
               />
             </div>
 
             {/* Filtre par montant minimum */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="label text-sm">
                 Montant minimum (DH)
               </label>
               <input
@@ -260,13 +263,13 @@ const SearchFilters: React.FC = () => {
                     handleFilterChange('montantMin', value);
                   }
                 }}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md"
+                className="input-field px-4 py-4 rounded-xl text-sm touch-target"
               />
             </div>
 
             {/* Filtre par montant maximum */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-slate-700">
+              <label className="label text-sm">
                 Montant maximum (DH)
               </label>
               <input
@@ -281,26 +284,26 @@ const SearchFilters: React.FC = () => {
                     handleFilterChange('montantMax', value);
                   }
                 }}
-                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md"
+                className="input-field px-4 py-4 rounded-xl text-sm touch-target"
               />
             </div>
           </div>
 
           {/* Actions des filtres avancés */}
-          <div className="flex justify-between items-center pt-6 border-t border-slate-200">
-            <div className="text-sm text-slate-600 font-medium">
+          <div className="space-y-4 sm:space-y-0 sm:flex sm:justify-between sm:items-center pt-6 border-t border-slate-200">
+            <div className="text-sm text-slate-600 font-medium mobile-center">
               {hasActiveFilters && (
-                <span className="flex items-center">
+                <span className="flex items-center justify-center sm:justify-start">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
                   {Object.values(localFilters as any).filter(v => v !== '').length} filtre{Object.values(localFilters as any).filter(v => v !== '').length > 1 ? 's' : ''} actif{Object.values(localFilters as any).filter(v => v !== '').length > 1 ? 's' : ''}
                 </span>
               )}
             </div>
             
-            <div className="flex space-x-3">
+            <div className="form-actions">
               <button
                 onClick={handleClearFilters}
-                className="px-6 py-2.5 text-sm font-medium bg-white border border-slate-200 text-slate-700 rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                className="mobile-full sm:w-auto px-6 py-4 text-sm font-medium bg-white border border-slate-200 text-slate-700 rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed touch-target"
                 disabled={!hasActiveFilters}
               >
                 Réinitialiser
@@ -308,7 +311,7 @@ const SearchFilters: React.FC = () => {
               
               <button
                 onClick={() => setIsExpanded(false)}
-                className="px-6 py-2.5 text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
+                className="mobile-full sm:w-auto px-6 py-4 text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg touch-target"
               >
                 Appliquer
               </button>
