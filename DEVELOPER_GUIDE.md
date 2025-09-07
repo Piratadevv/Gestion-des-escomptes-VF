@@ -1,6 +1,4 @@
-# Banking Management System
 
-A React TypeScript frontend with Express.js backend for managing banking discounts (escomptes) and refinancing operations with comprehensive logging.
 
 ## Quick start (exact commands)
 
