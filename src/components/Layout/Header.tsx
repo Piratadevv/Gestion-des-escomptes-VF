@@ -72,9 +72,9 @@ const Header: React.FC = () => {
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className="heading-secondary text-white font-banking leading-tight">
+              <h2 className="heading-secondary text-white font-banking leading-tight">
                 Gestion Bancaire
-              </h1>
+              </h2>
               <p className="text-xs sm:text-sm text-banking-200 font-medium">
                 Unimagec
               </p>
@@ -84,15 +84,7 @@ const Header: React.FC = () => {
 
         {/* Right section */}
         <div className="flex items-center space-x-4">
-          {/* Last updated indicator */}
-          {lastUpdated && (
-            <div className="hidden xl:flex items-center space-x-2 text-xs text-banking-200 bg-banking-700/50 px-3 py-1.5 rounded-banking">
-              <svg className="w-4 h-4 text-banking-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="font-medium">Mis à jour: {formaterDateHeure(lastUpdated, 'HH:mm')}</span>
-            </div>
-          )}
+         
 
           {/* Notifications */}
           <div className="relative">

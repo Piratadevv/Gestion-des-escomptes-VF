@@ -56,7 +56,7 @@ const LoginForm: React.FC = () => {
                   className="w-full h-full object-contain rounded-full"
                 />
               </div>
-              <h1 className="text-2xl font-bold text-white mb-1">Sign In</h1>
+              <h1 className="text-2xl font-bold text-white mb-1">Se connecter</h1>
               <p className="text-banking-100 text-sm font-medium">Gestion Bancaires Unimagec</p>
             </div>
           </div>

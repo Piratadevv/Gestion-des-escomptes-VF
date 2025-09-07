@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
-import { selectNotifications, removeNotification } from '../../store/slices/uiSlice';
+import { selectNotifications, removeNotification, markNotificationAsRead } from '../../store/slices/uiSlice';
 import { Notification } from '../../types';
 
 /**
@@ -10,15 +10,15 @@ const NotificationContainer: React.FC = () => {
   const dispatch = useAppDispatch();
   const notifications = useAppSelector(selectNotifications);
 
-  // Auto-suppression des notifications après délai
+  // Auto-suppression des notifications lues après délai
   useEffect(() => {
     const timers: NodeJS.Timeout[] = [];
     
     notifications.forEach((notification) => {
-      if (notification.autoClose && notification.duration) {
+      if (notification.autoClose && notification.duration && notification.lu) {
         const timer = setTimeout(() => {
           dispatch(removeNotification(notification.id));
-        }, notification.duration);
+        }, 2000); // Délai réduit pour les notifications lues
         timers.push(timer);
       }
     });
@@ -29,7 +29,8 @@ const NotificationContainer: React.FC = () => {
   }, [notifications, dispatch]);
 
   const handleClose = (id: string) => {
-    dispatch(removeNotification(id));
+    // Marquer comme lu au lieu de supprimer immédiatement
+    dispatch(markNotificationAsRead(id));
   };
 
   const getNotificationIcon = (type: Notification['type']) => {
@@ -93,13 +94,16 @@ const NotificationContainer: React.FC = () => {
     }
   };
 
-  if (notifications.length === 0) {
+  // Filtrer pour ne montrer que les notifications non lues
+  const unreadNotifications = notifications.filter(n => !n.lu);
+
+  if (unreadNotifications.length === 0) {
     return null;
   }
 
   return (
     <div className="fixed top-20 right-4 z-50 space-y-2 max-w-sm w-full">
-      {notifications.map((notification) => (
+      {unreadNotifications.map((notification) => (
         <div
           key={notification.id}
           className={`
@@ -157,13 +161,16 @@ const NotificationContainer: React.FC = () => {
             </button>
           </div>
 
-          {/* Barre de progression pour auto-close */}
-          {notification.autoClose && notification.duration && (
+          {/* Indicateur de notification non lue */}
+          <div className="absolute top-2 right-2 w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+          
+          {/* Barre de progression pour auto-close - désactivée pour les notifications persistantes */}
+          {notification.autoClose && notification.duration && notification.lu && (
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-black bg-opacity-10 rounded-b-lg overflow-hidden">
               <div
                 className="h-full bg-current opacity-50 animate-progress-bar"
                 style={{
-                  animationDuration: `${notification.duration}ms`,
+                  animationDuration: "2000ms",
                 }}
               />
             </div>

@@ -53,19 +53,29 @@ const uiSlice = createSlice({
         ...action.payload,
         id: Date.now().toString(),
         timestamp: new Date().toISOString(),
+        lu: false, // Par défaut, les notifications ne sont pas lues
       };
       state.notifications.push(notification);
       
-      // Limiter le nombre de notifications à 5
-      if (state.notifications.length > 5) {
+      // Limiter le nombre de notifications à 10 pour permettre la persistance
+      if (state.notifications.length > 10) {
         state.notifications.shift();
       }
     },
     removeNotification: (state, action: PayloadAction<string>) => {
       state.notifications = state.notifications.filter(n => n.id !== action.payload);
     },
+    markNotificationAsRead: (state, action: PayloadAction<string>) => {
+      const notification = state.notifications.find(n => n.id === action.payload);
+      if (notification) {
+        notification.lu = true;
+      }
+    },
     clearNotifications: (state) => {
       state.notifications = [];
+    },
+    clearReadNotifications: (state) => {
+      state.notifications = state.notifications.filter(n => !n.lu);
     },
     
     // Gestion de la sidebar
@@ -102,7 +112,9 @@ export const {
   closeModal,
   addNotification,
   removeNotification,
+  markNotificationAsRead,
   clearNotifications,
+  clearReadNotifications,
   toggleSidebar,
   setSidebarOpen,
   setTheme,
