@@ -47,7 +47,7 @@ const Header: React.FC = () => {
   }, [showUserMenu]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-banking-800 shadow-banking-md border-b border-banking-900">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-banking-900 to-banking-700 shadow-banking-md ">
       <div className="flex items-center justify-between h-16 px-6">
         {/* Left section */}
         <div className="flex items-center space-x-4">
